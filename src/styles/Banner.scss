@@ -1,0 +1,13 @@
+.banner{
+
+    .imgDiv{
+        display: flex;
+        justify-content: center;
+        width: 100% ;
+       
+        .image{
+            height: 30rem;
+            width: 100%;
+        }
+    }
+}

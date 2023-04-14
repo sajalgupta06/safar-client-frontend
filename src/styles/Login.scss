@@ -1,0 +1,228 @@
+.ant-notification-notice-description{
+  text-transform: capitalize;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+ 
+
+.loginContainer{
+    margin-top: 3rem;
+        width: 50rem;
+        background-color: white;
+        font-family: sans-serif;
+        font-size: 14px;
+      
+    
+      
+      .content-contenaire {
+        max-width: 300px;
+        margin: 30px auto;
+        text-align: center;
+        color: #697887;
+        }
+      
+      .top-container {
+        margin-bottom: 30px;
+        text-align: center;
+      
+      }
+      
+      .top-container > img {
+        width: 40%;
+        padding-bottom: 45px;
+      }
+      
+      .top-container > h2 {
+        padding-bottom: 20px;  
+        font-size: 2rem;
+        color: var(--primarycolour);
+      }
+      
+      .top-container > p > a {
+        margin-left: 5px;
+        color:var(--primarycolour);
+        text-decoration: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+      
+      .top-container > p > a:hover {
+        color: #000000;
+      }
+      
+      .otpBtn{
+        width: 100%;
+        font-weight: 600;
+        margin-bottom: 1rem ;
+        &:hover{
+          color: white;
+        }
+       
+      }
+      .input {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        
+     
+      
+      }
+      
+      input[type=number], input[type=password] {
+        width: 93%;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid var(--primarycolour);
+        border-radius: 5px; 
+       
+      }
+      
+      
+      input[type=number]:hover {
+        box-shadow: 0 0 11px var(--primarycolour);
+        border: 1px solid  var(--primarycolour);
+        
+      }
+      
+      input[type=password]:hover {
+        box-shadow: 0 0 11px var(--primarycolour);
+        border: 1px solid var(--primarycolour);
+      }
+      
+      .checkbox  {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        margin-bottom: 20px;
+      }
+      
+      .checkbox label {
+        padding-left: 10px;
+        cursor: pointer;
+      }
+      
+      input[type=submit] {
+        width: 100%;
+        background-color: var(--primarycolour);
+        border: none;
+        border-radius: 5px;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        margin-bottom: 20px;
+        cursor: pointer;  
+      }
+      
+      input[type=submit]:hover {
+        background-color: var(--primarycolour);
+        box-shadow: 0 0 11px var(--primarycolour);
+      }
+      
+      .content-contenaire > p > a {
+        text-decoration: none;  
+        color: #697887;
+        padding-bottom: 10px;
+        cursor: pointer;
+      }
+      
+      .content-contenaire > p > a:hover {
+        color: #000000;
+      }
+      
+      .img-container {
+          width: 50%;
+          background-size: cover;
+          height: 100%;
+          img{
+            height: 100%;
+          }
+      }
+        
+        .toronto-logo {
+          width: 85%;
+          margin: 370px auto;
+        }
+        
+        .toronto {
+          width: 45%;
+          margin-bottom: 20px;
+        }
+        
+        .toronto img {
+          width: 100%;
+          object-fit: cover;
+        }
+        
+        .welcome {
+          width: 90%;
+          text-align: auto;
+          color: white;
+        }
+        
+        
+    }
+}  
+    /* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 380px) {
+    .loginContainer {    
+      max-width: 300px;
+      max-height: 500px;
+    }
+    
+    input[type=email], input[type=password] {
+    width: 72%;
+    }
+    
+    input[type=submit] {
+    width: 80%;
+    }
+    
+    .checkbox  {
+    padding-left: 10%;
+  }
+    
+    .img-container {
+      display: none;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+  .loginContainer {
+    height: 650px;
+  }
+  
+    
+  .img-container {
+    display: none;
+  }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and 768px) */
+@media screen and ( max-width: 768px) and (min-width: 600px) {
+  .loginContainer {
+    height: 520px;
+    box-shadow: 5px 5px 15px 5px #B2B2B2;
+  }
+  .img-container {
+    display: none;
+  }
+}
+
+/* Medium devices (landscape tablets, 800px and up) */
+@media screen and (min-width: 900px) {
+  .loginContainer {
+    width: 800px;
+    height: 520px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 5px 5px 15px 5px #B2B2B2;
+  }
+  .content-contenaire {
+    width: 50%;
+  }}

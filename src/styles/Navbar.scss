@@ -1,0 +1,231 @@
+
+
+
+.popOverDiv{
+    width: 7rem;
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.5rem;
+    a{
+        color: black;
+        // margin-top: 0.5rem;
+    }
+    p{
+        cursor: pointer;
+        user-select: none;
+        color: var(--primarycolour);
+    }
+    hr{
+        background-color: var(--greyText);
+    }
+}
+
+.navBarSection{
+   
+    .header{
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: transparent;
+        width: 100%;
+        padding: 1rem;
+        z-index: 1000;
+        .head{
+            color: var(--primarycolour);
+            font-family: Arizonia;
+            font-size: 2.5rem;
+        }
+        .loginItem{
+           
+            background: var(--primarycolour);
+            padding: 0.3rem 0.7rem!important;
+            border-radius: 1rem;
+            .navLink{
+                color: white!important;
+                padding: 0.5rem;
+            }
+        }
+        @media screen and (max-width:768px) {
+            .navBar{
+                background:var(--greyBg);
+                position: absolute;
+                height: max-content;
+                padding: 1rem;
+                width: 100%;
+                top: 0;
+                left: -500%;
+                box-shadow: 0 2px 4px rgba(209,209,0,904);
+                transition: .5s ease;
+                z-index: 1000;
+
+                .navLists{
+                    flex-direction :column;
+                    justify-content: center;
+                    width :100%;
+                    margin: auto;
+
+                   
+
+
+                    .navItems{
+                        padding: 1rem 0;
+                       
+                        .navLink{
+                            color: var(--textcolour);
+                            font-size: .9rem;
+                            font-weight: 600;
+                            &:hover{
+                                color: var(--primarycolour);
+
+                            }
+                        }
+
+                       
+                    }
+
+                    .headerBtns{
+                        flex-direction: column;
+                        .btn{
+                            margin-top: 1rem;
+                           
+                        }
+                        a{
+                            font-weight: 600;
+                            &:hover{
+                                color: var(--whitecolour);
+                            }
+                        }
+                    }
+                    .loginBtn{
+                        background:none;
+                        border:1px solid var(--primarycolour);
+                      
+                        &:hover{
+                            background: var(--Hovercolour) ;
+                            a{
+                                color: var(--whitecolour);
+                            }
+                        }
+                    }
+
+
+                }
+                .closeNavbar{
+                    position: absolute;
+                    top:1rem;
+                    right: 1.5rem;
+                    color: var(--primarycolour);
+                    &:hover .icon{
+                        color: var(--Hovercolour);
+                    }
+                }
+            }
+            .activeNavbar{
+                left:0;
+            }
+        }
+        .toggleNavbar{
+            position: absolute;
+                    top:1rem;
+                    right: 1.5rem;
+        }
+    }
+
+    .activeHeader{
+        background: var(--greyText);
+        box-shadow: 0.2px 8px 2px rgba(178 ,178,178,0.45) ;
+    }
+
+}
+
+
+
+
+
+@media screen and (min-width:769px){
+    .navBarSection{
+        .toggleNavbar, .closeNavbar{
+            display: none;
+        }
+
+        .header{
+            padding: 1.5rem 2rem;
+            .navBar{
+                .navLists{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+                        .navItems{
+                            
+                            .navLink{
+                                color: var(--primarycolour);
+                                padding: 0 .45rem;
+                                font-size: .9rem;
+                                font-weight: 500;
+                                    &:hover{
+                                        color:var(--Hovercolour)
+                                    }
+                                
+                            }
+
+                            .avatar{
+                                background-color: var(--primarycolour);
+                                cursor: pointer;
+                                &:hover{
+                                    scale: 1.1;
+                                }
+                            }
+                        }
+                        .btn{
+                            margin-left: 1rem;
+                            a{
+                                color: var(--primarycolour);
+                                font-weight: 500;
+                            }
+                        }
+                        .loginBtn{
+                            background: none;
+                            border: 1px solid var(--primarycolour);
+                            &:hover{
+                                background: var(--primarycolour);
+                                a{
+                                    color:var(--whitecolour)
+                                }
+                            }
+                        }
+                }
+            }
+        }
+
+
+    }
+    
+    }
+
+
+
+    @media screen and (min-width:960px){
+        .header{
+            .navBar{
+                .navLists{
+                    .navItems{
+                        padding: 0 .7rem;
+                    }
+                }
+            }
+        }
+
+        }
+
+
+
+
+    @media screen and (min-width:1024px){
+        .header{
+           padding: 1rem 0.5rem;
+        }
+
+        }

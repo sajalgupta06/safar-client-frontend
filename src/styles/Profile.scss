@@ -1,0 +1,202 @@
+.profile{
+    width: 100%;
+    // position: relative;
+    // left: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .profileContainer{
+
+            width: 100%;
+            min-height: 40rem;
+            height: auto;
+            // box-shadow: var(--box-shadow);
+            margin: 2rem;
+            margin-top: 5rem;
+            display: flex;
+            gap: 1rem;
+            padding: 0.5rem;
+            
+            &-left{
+                box-shadow: var(--box-shadow);
+                width: 15%;
+                display: flex;
+                flex-direction: column;
+                padding: 0.5rem ;
+                &-top{
+                    height: 30%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .avatar{
+                        background-color: var(--primarycolour);
+                    }
+
+                }
+                &-middle{
+                    height: 60%;
+                   ul{
+                    // padding: 0 1rem;
+                    li{
+                        background-color: white;
+                        color: black;
+                        margin: 1rem 0;
+                        // height: 3rem;
+                        cursor: pointer;
+                        padding: 0.75rem;
+                        user-select: none;
+                        // box-shadow: var(--box-shadow);
+                    
+                            
+                    }
+                    .active{
+                        background-color: var(--primarycolour);
+                        color: white;
+                    }
+                   }
+                    
+                }
+            }
+
+            &-right{
+                box-shadow: var(--box-shadow);
+                width: 85%;
+                height: auto;
+                padding-bottom: 1.5rem;
+                &-top{
+                    padding: 1rem;
+                    font-size: 1.2rem;
+                }
+
+                &-middle{
+                    padding: 1rem;
+                
+                    .policy{
+                      height: 30rem;
+                      overflow: scroll;
+                      overflow-x: hidden;
+                      padding: 0.5rem;
+                    }
+                    .favourites{
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap:1rem;
+                        .singleDestination {
+                            overflow: hidden;
+                            border-radius: 1rem;
+                            box-shadow: 0 2px 8px rgba(178, 178, 178, 0.334);
+                            height: 13rem;
+                            width: 15rem;
+                            .destImage {
+                              height: 7rem;
+                              width: 100%;
+                              position: relative;
+                              overflow: hidden;
+                              .icon{
+                                font-size: 1.5rem;
+                                position: absolute;
+                                right: 0.5rem;
+                                top: 0.5rem;
+                              }
+                              img {
+                                height: 100%;
+                                width: 100%;
+                                object-fit: cover;
+                              }
+                            
+                            }
+                    
+                            .destFooter {
+                              padding: 1rem;
+                    
+                              .name {
+                                font-size: 1rem;
+                                font-weight: 600;
+                                color: var(--blackcolour);
+                                position: relative;
+                                width: max-content;
+                                margin-bottom: 0.7rem;
+                                // display: flex;
+                                // justify-content: space-between;
+                                // align-items: center;
+                                // width: 100%;
+                                // margin-bottom: 1rem;
+                    
+                                 
+                    
+                                // &::after {
+                                //   content: "";
+                                //   position: absolute;
+                                //   background: var(--primarycolour);
+                                //   top: 45%;
+                                //   right: -150%;
+                                //   height: 5px;
+                                //   width: 45px;
+                                //   border-radius: 1rem;
+                                // }
+                              }
+                    
+                              .destText {
+                                justify-content: space-between;
+                                .icon {
+                                //   position: relative;
+                                  right: 10px;
+                                  bottom: 10px;
+                                  padding: 0.5rem;
+                                  background: var(--primarycolour);
+                                  font-size: 2.3rem;
+                                  border-radius: 50%;
+                                  color: var(--whitecolour);
+                                  border: 1px solid transparent;
+                                  transition: 0.3s ease;
+                    
+                                  &:hover {
+                                    background: var(--blackcolour);
+                                    border: 1px solid var(--primarycolour);
+                                    color: var(--primarycolour);
+                                  }
+                                }
+                                h6 {
+                                  color: var(--blackcolour);
+                                  font-weight: 500;
+                                  font-size: 15px;
+                                }
+                                .flex {
+                                  font-size: 16px;
+                                  font-weight: 600;
+                                  align-items: flex-start;
+                                  transform: translateY(5px);
+                    
+                                  .icon {
+                                    color: var(--primarycolour);
+                                  }
+                                }
+                              }
+                            }
+                    
+                            &:hover {
+                              // .overlayInfo {
+                              //   overflow: visible;
+                              //   padding: 1rem 1.5rem;
+                              //   height: 100%;
+                              // }
+                            }
+                          }
+                    }
+                }
+            }
+    }
+}
+
+.Account{
+  padding: 0 1.5rem;
+  .ant-form-item .ant-form-item-label{
+  text-align: start!important;
+}
+  
+}
+
+.bookings{
+  
+}

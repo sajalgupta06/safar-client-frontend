@@ -1,0 +1,264 @@
+// :root{
+//     --primarycolour : hsl(26,93%,50%);
+//     --Hovercolour: hsl(26,90%,42%);
+//     --whitecolour:hsl(0,0%,100%);
+//     --blackcolour:hsl(0,0%,18%);
+//     --textcolour:hsl(240,1%,48%);
+//     --whitecolourDeam:hsl(0,0%,93%);
+//     --greyBg:hsl(0,0%,96%);
+//     --greyText:rgb(190,190,190);
+//     --inputcolour:hsl(330,12%,97%);
+//     --box-shadow: 0 2px 8px 2px rgba(178 ,178,178,0.45) ;
+//   }
+
+
+.offer{
+    .secContainer{
+        .mainContent{
+            gap:1rem;
+            .singleOffer{
+                border-radius: 1rem;
+                overflow: hidden;
+                padding: 0.5rem;
+                box-shadow: var(--box-shadow);
+                .icon{
+                    font-size: 20px;
+                    color:var(--textcolour);
+                }
+                small{
+                    font-weight: 500;
+                    color:var(--textcolour);
+                }
+                .destImage{
+                    position: relative;
+                    height: 200px;
+                    width: 100%;
+                    border-radius: 1rem;
+                    overflow: hidden;
+                    img{
+                            height: 100%;
+                            object-fit: cover;
+
+                    }
+
+                    .discount{
+                        position: absolute;
+                        top:10px;
+                        right:10px;
+                        padding:5px 10px;
+                        background-color:  var(--primarycolour);
+                        color:var(--whitecolour);
+                        border-radius: 3rem;
+                        font-size: 10px;
+                        font-weight: 500;
+
+                    }
+
+                }
+                .offerBody{
+                    padding:1rem;
+                    .price{
+                        justify-content: space-between;
+
+                        h4{
+                            color:var(--blackcolour);
+                            font-weight: 700;
+                            font-size: 1.1rem;
+
+                        }
+
+                        .status{
+                            padding:5px 10px;
+                            color:var(--Hovercolour);
+                            background: var(--greyBg);
+                            font-size: 10px;
+                            font-weight: 600;
+                            border-radius: 3rem;
+
+                        }
+                    }
+                    .amenities{
+                        width: 100%;
+                        flex-wrap: wrap;
+                        justify-content: flex-start;
+                        padding: 1rem 0;
+                        gap:0.5rem;
+
+                        .singleAmenity{
+                            padding:5px 10px;
+                            border-radius: 5px;
+                            background: var(--greyBg);
+                            gap: 0.5em;
+                        }
+                        
+                    }
+
+                    .btn{
+                        margin-top: 1rem;
+                        width: 100%;
+                        text-align: center;
+                        justify-content: center;
+                        padding: 0.6rem;
+                        color: var(--whitecolour);
+                        font-weight: 600;
+                        gap:0.5rem;
+                        .icon{
+                            color: var(--whitecolour);
+                        }
+
+                    }
+
+                }
+               
+                &:hover{
+                    transform: translateY(-7px);
+                }
+
+
+            }
+            
+        .card {
+  background-color: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+  max-width: 350px;
+  overflow: hidden;
+  width: 17rem;
+  border-radius: 1rem;
+  position: relative;
+  &-heading{
+    position: absolute;
+  
+    background: rgba(0, 0, 0, 0.65);
+    text-align: center;
+    width: 100%;
+    bottom: 5rem;
+    padding: 0 7px;
+    h2 {
+      color: var(--primarycolour);
+      font-size: 1.2rem;
+      margin-top: 0;
+    //   margin-bottom: 10px;
+        
+    }
+  }
+  
+}
+
+.card-image {
+  position: relative;
+}
+
+.card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  height: 14rem;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-offer-label {
+  background-color: #ff7f00;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  transform: rotate(45deg);
+  padding: 5px 15px;
+  text-transform: uppercase;
+  border-radius: 0 10px 0 0;
+}
+
+.card-content {
+  padding: 20px;
+  padding-top: 1px;
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    
+  
+}
+
+
+
+.card-subtitle {
+  color: #666;
+  font-size: 0.8rem;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.card-pricing {
+  font-size: 1.2rem;
+  // margin: 10px 0;
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-price {
+  color: var(--primarycolour);
+  font-weight: bold;
+//   margin-right: 10px;
+font-size: 1.5rem;
+align-items: center;
+display: flex;
+
+}
+
+.card-price-strike {
+  color: #666;
+  text-decoration: line-through;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+.card-rating {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.card-rating-icon {
+  color: var(--primarycolour);
+  font-size: 1rem;
+  margin-right: 5px;
+}
+
+.card-rating-number {
+  color: var(--primarycolour);
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.card-rating-review {
+  color: #666;
+  font-size:1rem;
+}
+
+.card-buttons{
+    // margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    button{
+      &:hover{
+        scale: 1.2;
+      }
+    }
+}
+
+
+
+        }
+    }
+}
