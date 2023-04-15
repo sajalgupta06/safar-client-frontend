@@ -66,7 +66,7 @@ const Collections = (props) => {
   return (
     <>
       <section className="collections section container">
-        <div className="secContainer ">
+        <div className="secContainer  large ">
           <div className="secHeader flex">
             <div className="textDiv">
               <h2 className="secTitle">Hot Collections</h2>
@@ -89,108 +89,149 @@ const Collections = (props) => {
             </div>
           </div>
 
-          <div className="mainContent ">
+          <div className="mainContent  ">
             {/* <div className=""> */}
             <Slider {...settings} ref={sliderRef}>
               <Link href={"/trips/bikeTrip"}>
-              <div className="cards">
-                <div className="card-item">
-                  <div className="card-image">
-                    <img src="https://images.pexels.com/photos/4109248/pexels-photo-4109248.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
-                  </div>
-                  <div className="card-info">
-                    <h2 className="card-title">Bike Trip</h2>
-                    <p className="card-intro"></p>
+                <div className="cards">
+                  <div className="card-item">
+                    <div className="card-image">
+                      <img src="https://images.pexels.com/photos/4109248/pexels-photo-4109248.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+                    </div>
+                    <div className="card-info">
+                      <h2 className="card-title">Bike Trip</h2>
+                      <p className="card-intro"></p>
+                    </div>
                   </div>
                 </div>
-              </div>
               </Link>
 
               <Link href={"/trips/Trekking"}>
-              <div className="cards">
-                <div className="card-item">
-                  <div className="card-image">
-                    <img src="https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg?auto=compress&cs=tinysrgb&w=1600"></img>
-                  </div>
-                  <div className="card-info">
-                    <h2 className="card-title">Trekking</h2>
-                    <p className="card-intro"></p>
+                <div className="cards">
+                  <div className="card-item">
+                    <div className="card-image">
+                      <img src="https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg?auto=compress&cs=tinysrgb&w=1600"></img>
+                    </div>
+                    <div className="card-info">
+                      <h2 className="card-title">Trekking</h2>
+                      <p className="card-intro"></p>
+                    </div>
                   </div>
                 </div>
-              </div>
-
               </Link>
               <Link href={"/trips/BeachTrip<"}>
-              <div className="cards">
-                <div className="card-item">
-                  <div className="card-image">
-                    <img src="https://images.pexels.com/photos/5326943/pexels-photo-5326943.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
-                  </div>
-                  <div className="card-info">
-                    <h2 className="card-title">Beach Trip</h2>
-                    <p className="card-intro"></p>
+                <div className="cards">
+                  <div className="card-item">
+                    <div className="card-image">
+                      <img src="https://images.pexels.com/photos/5326943/pexels-photo-5326943.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+                    </div>
+                    <div className="card-info">
+                      <h2 className="card-title">Beach Trip</h2>
+                      <p className="card-intro"></p>
+                    </div>
                   </div>
                 </div>
-              </div>
               </Link>
               <Link href={"/trips/MountainsTrip"}>
-              <div className="cards">
-                <div className="card-item">
-                  <div className="card-image">
-                    <img src="https://images.pexels.com/photos/8969049/pexels-photo-8969049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
-                  </div>
-                  <div className="card-info">
-                    <h2 className="card-title">Mountains Trip</h2>
-                    <p className="card-intro"></p>
+                <div className="cards">
+                  <div className="card-item">
+                    <div className="card-image">
+                      <img src="https://images.pexels.com/photos/8969049/pexels-photo-8969049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+                    </div>
+                    <div className="card-info">
+                      <h2 className="card-title">Mountains Trip</h2>
+                      <p className="card-intro"></p>
+                    </div>
                   </div>
                 </div>
-              </div>
               </Link>
               <Link href={"/trips/FamilyTrip"}>
-              <div className="cards">
-                <div className="card-item">
-                  <div className="card-image">
-                    <img src="https://images.pexels.com/photos/12955925/pexels-photo-12955925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
-                  </div>
-                  <div className="card-info">
-                    <h2 className="card-title">Family Trip</h2>
-                    <p className="card-intro"></p>
+                <div className="cards">
+                  <div className="card-item">
+                    <div className="card-image">
+                      <img src="https://images.pexels.com/photos/12955925/pexels-photo-12955925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+                    </div>
+                    <div className="card-info">
+                      <h2 className="card-title">Family Trip</h2>
+                      <p className="card-intro"></p>
+                    </div>
                   </div>
                 </div>
-              </div>
               </Link>
 
-         
               <Link href={"/trips/WeekendTrip<"}>
-              <div className="cards">
-                <div className="card-item">
-                  <div className="card-image">
-                    <img src="https://images.pexels.com/photos/2870167/pexels-photo-2870167.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
-                  </div>
-                  <div className="card-info">
-                    <h2 className="card-title">Weekend Trip</h2>
-                    <p className="card-intro"></p>
+                <div className="cards">
+                  <div className="card-item">
+                    <div className="card-image">
+                      <img src="https://images.pexels.com/photos/2870167/pexels-photo-2870167.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+                    </div>
+                    <div className="card-info">
+                      <h2 className="card-title">Weekend Trip</h2>
+                      <p className="card-intro"></p>
+                    </div>
                   </div>
                 </div>
-              </div>
               </Link>
 
               <Link href={"/trips/ReligiousTrips"}>
-              <div className="cards">
-                <div className="card-item">
-                  <div className="card-image">
-                    <img src="https://images.pexels.com/photos/1583244/pexels-photo-1583244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
-                  </div>
-                  <div className="card-info">
-                    <h2 className="card-title">Religious Trips</h2>
-                    <p className="card-intro"></p>
+                <div className="cards">
+                  <div className="card-item">
+                    <div className="card-image">
+                      <img src="https://images.pexels.com/photos/1583244/pexels-photo-1583244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+                    </div>
+                    <div className="card-info">
+                      <h2 className="card-title">Religious Trips</h2>
+                      <p className="card-intro"></p>
+                    </div>
                   </div>
                 </div>
-              </div>
               </Link>
-
-           
             </Slider>
+          </div>
+        </div>
+
+        <div className="secContainer small">
+          <div className="secHeader flex">
+            <div className="textDiv">
+              <h2 className="secTitle">Choose what you love !</h2>
+            </div>
+          </div>
+
+          <div className="tiles">
+            <div className="tile">
+              <img src="https://images.pexels.com/photos/4109248/pexels-photo-4109248.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+              <p>Bike Trip</p>
+            </div>
+
+            <div className="tile">
+              <img src="https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg?auto=compress&cs=tinysrgb&w=1600"></img>
+              <p>Trekking</p>
+            </div>
+
+            <div className="tile">
+              <img src="https://images.pexels.com/photos/5326943/pexels-photo-5326943.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+              <p>Beach Trip</p>
+            </div>
+
+            <div className="tile">
+              <img src="https://images.pexels.com/photos/8969049/pexels-photo-8969049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+              <p>Mountains Trip</p>
+            </div>
+
+            <div className="tile">
+              <img src="https://images.pexels.com/photos/12955925/pexels-photo-12955925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+              <p>Family Trip</p>
+            </div>
+
+            <div className="tile">
+              <img src="https://images.pexels.com/photos/2870167/pexels-photo-2870167.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+              <p>Weekend Trip</p>
+            </div>
+
+            <div className="tile">
+              <img src="https://images.pexels.com/photos/1583244/pexels-photo-1583244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
+              <p>Religious Trip</p>
+            </div>
           </div>
         </div>
       </section>

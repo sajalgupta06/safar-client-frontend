@@ -25,9 +25,9 @@ export default function Index({ popularData }) {
       <Collections/>
       <Banner image = {banner1}/>
       <Offer data={popularData} />
-      <About />
       <Locations/>
       <Banner image = {banner2}/>
+      <About />
       {/* <PhotoGallery/> */}
       <>
       

@@ -4,9 +4,21 @@
         display: flex;
         justify-content: center;
         width: 100% ;
+        height: 30rem;
        
+
+    @media screen and (max-width: 700px) {
+        height: 20rem;
+    }
+    @media screen and (max-width: 450px) {
+        height: 15rem;
+    }
+
+    @media screen and (max-width: 350px) {
+        height: 7rem;
+    }
         .image{
-            height: 30rem;
+            height: 100%;
             width: 100%;
         }
     }

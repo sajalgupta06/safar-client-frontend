@@ -146,9 +146,60 @@
           }
         }
         }
+
+
+        .tiles{
+          display: flex;
+          gap: 1rem;
+          align-items: center;
+          overflow: scroll;
+          .tile{
+            height: 8rem;
+            // background-color: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 1rem;
+            img{
+
+              border-radius: 100%;
+              height: 5rem;
+              width: 5rem;
+              box-shadow: var(--box-shadow);
+              margin-bottom: 5px;
+
+            }
+            p{
+              text-align: center;
+              font-size: 0.8rem;
+              height: 1.5rem;
+            }
+          }
+          &::-webkit-scrollbar {
+            display: none;
+          }        }
+
       }
     }
     
+
+    @media screen and (max-width: 500px) {
+      .collections {
+       .large{
+
+         display: none;
+       }
+    }
+  }
+  @media screen and (min-width: 500px) {
+    .collections {
+     .small{
+
+       display: none;
+     }
+  }
+}
     @media screen and (min-width: 480px) {
       .collections {
         // padding-top: 10rem;

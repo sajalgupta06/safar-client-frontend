@@ -58,9 +58,17 @@ const Popular = (props) => {
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 530,
         settings: {
-          slidesToShow: 1 ,
+          slidesToShow: 2 ,
+          slidesToScroll: 1,
+        },
+      },
+
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 2.5,
           slidesToScroll: 1,
         },
       },
@@ -147,7 +155,7 @@ const Popular = (props) => {
                     <h2 className="card-title">{trip.name}</h2>
                     <p className="card-intro">starting at <span>
                     <BiRupee className="icon"/> {trip.finalPrice}
-                      </span> per person </p>
+                      </span> </p>
                   </div>
                 </div>
               </div>

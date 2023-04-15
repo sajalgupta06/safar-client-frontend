@@ -346,6 +346,52 @@ export default function index({ data }) {
         })}
     
   </div> */}
+ <div className="secContainer-middle-right">
+             
+                    <div className="secContainer-middle-right-heading">
+                      <div className="secContainer-middle-right-heading-left">
+                        <h2 className="tripName">
+                          Available Dates and Prices{" "}
+                          <BsFillCalendarFill className="icon" />{" "}
+                        </h2>
+                        {/* <p>Company Name</p> */}
+                      </div>
+                      <div className="secContainer-middle-right-heading-middle">
+                        <Dropdown
+                          menu={{
+                            items,
+                          }}
+                          placement="bottom"
+                          trigger={"click"}
+                          arrow={{
+                            pointAtCenter: true,
+                          }}
+                        >
+                          <Button className="dateBtn">
+                            {(date &&
+                              `
+          ${moment(date.startDate).format("DD-MMM-YYYY")} to 
+            ${moment(date.endDate).format("DD-MMM-YYYY")}`) ||
+                              "Choose Dates"}
+                          </Button>
+                        </Dropdown>
+                      </div>
+
+                      <div className="secContainer-middle-right-heading-right">
+                        <Link
+                          href={{
+                            pathname: "/purchase",
+                            query: { id: data._id, name: data.name }, // thedata data
+                          }}
+                        >
+                          <Button type="primary" className="buyButton">
+                            Book Now
+                          </Button>{" "}
+                        </Link>
+                      </div>
+                    </div>
+                 
+                </div>
 
                 <div className="secContainer-middle-left">
                   <div className="secContainer-middle-left-about">
@@ -439,7 +485,7 @@ export default function index({ data }) {
                                           <p className="card-about">
                                             {card.about}
                                           </p>
-                                          <div className="card-photos">
+                                          {/* <div className="card-photos">
                                             <Image.PreviewGroup>
                                               <Image
                                                 src={homeBgImage.src}
@@ -458,7 +504,7 @@ export default function index({ data }) {
                                                 className="card-photos-photo"
                                               ></Image>
                                             </Image.PreviewGroup>
-                                          </div>
+                                          </div> */}
                                         </div>
                                       );
                                     })}
@@ -478,52 +524,7 @@ export default function index({ data }) {
                   </div>
                 </div>
 
-                <div className="secContainer-middle-right">
-                  <Affix offsetTop={top}>
-                    <div className="secContainer-middle-right-heading">
-                      <div className="secContainer-middle-right-heading-left">
-                        <h2 className="tripName">
-                          Available Dates and Prices{" "}
-                          <BsFillCalendarFill className="icon" />{" "}
-                        </h2>
-                        {/* <p>Company Name</p> */}
-                      </div>
-                      <div className="secContainer-middle-right-heading-middle">
-                        <Dropdown
-                          menu={{
-                            items,
-                          }}
-                          placement="bottom"
-                          trigger={"click"}
-                          arrow={{
-                            pointAtCenter: true,
-                          }}
-                        >
-                          <Button className="dateBtn">
-                            {(date &&
-                              `
-          ${moment(date.startDate).format("DD-MMM-YYYY")} to 
-            ${moment(date.endDate).format("DD-MMM-YYYY")}`) ||
-                              "Choose Dates"}
-                          </Button>
-                        </Dropdown>
-                      </div>
-
-                      <div className="secContainer-middle-right-heading-right">
-                        <Link
-                          href={{
-                            pathname: "/purchase",
-                            query: { id: data._id, name: data.name }, // thedata data
-                          }}
-                        >
-                          <Button type="primary" className="buyButton">
-                            Book Now
-                          </Button>{" "}
-                        </Link>
-                      </div>
-                    </div>
-                  </Affix>
-                </div>
+               
               </div>
             </div>
           </section>

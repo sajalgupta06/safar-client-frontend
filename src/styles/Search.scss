@@ -97,7 +97,7 @@
             input{
                 width: 100%;
                 background: var(--inputcolour) ;
-                border-radius: 10px;
+                border-radius: 1rem;
                 border:none;
                 padding: 10px;
                 font-size: 13px;
@@ -145,6 +145,27 @@
     }
   }
 }
+
+
+
+@media screen and (max-width:480px)
+{
+  .search{
+    .secContainer{
+        .searchCard{
+            bottom: -40px;
+            width: 95%;
+            padding: 1rem;
+            grid-template-columns: repeat(2,1fr);
+            .btn{
+                // transform:translateY(15px);
+            }
+        
+        }
+    }
+  }
+}
+
 
 @media screen and (min-width:556px)
 {
