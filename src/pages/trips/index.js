@@ -484,7 +484,7 @@ console.log(sort)},
                                 <small>450 Vines #310 London</small>
                               </div>
 
-                              <Link href={`/trip/${ele._id}`} scroll={true}>
+                              <Link href={`/trip/${ele.slug}`} scroll={true}>
                                 <button className="btn flex">
                                   View Details
                                   <BsArrowRightShort className="icon" />

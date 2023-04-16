@@ -55,6 +55,7 @@ const sendOtp = async () => {
     } catch (error) {
       console.log(error)
       alerts.error( "Error in sending OTP");
+      // alerts.error( error);
     }
 
     setButtonLoading(false);

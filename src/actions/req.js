@@ -216,6 +216,14 @@ export const fetchSingleTrip = async(id) => {
 
 };
 
+
+export const fetchSingleTripBySlug = async(slug) => {
+  
+  return await getApi(`/trip/${slug}`,false)
+
+};
+
+
 export const fetchMultipleTrips = async(data) => {
   
   return await postApi(`/trips`,data,true)

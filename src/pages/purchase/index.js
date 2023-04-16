@@ -183,12 +183,12 @@ export default function index({data}) {
               ]}
             />
 
-            <p>
+            {/* <p>
               {tabs == 0 && "Trip Details"}
               {tabs == 1 && "Passengers Details"}
               {tabs == 2 && "Preview"}
               {tabs == 3 && "Checkout"}
-            </p>
+            </p> */}
           </div>
           <div className="purchase-container-middle">
             {tabs == 0 && <Date

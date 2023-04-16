@@ -9,9 +9,15 @@ export default function Date({ ticketData, tripData, setTicketData,selectedRowKe
   };
 
   const [date, setDate] = useState();
-  const [price, setPrice] = useState();
 
   const columns = [
+
+    {
+      title: "Price",
+      dataIndex: "basePrice",
+      key: "finalPbasePricerice",
+    },
+    
     {
       title: "Pickup Point",
       dataIndex: "pickupPoint",
@@ -35,11 +41,7 @@ export default function Date({ ticketData, tripData, setTicketData,selectedRowKe
       ),
     },
 
-    {
-      title: "Price",
-      dataIndex: "basePrice",
-      key: "finalPbasePricerice",
-    },
+    
   ];
 
   const items = [
@@ -117,6 +119,24 @@ export default function Date({ ticketData, tripData, setTicketData,selectedRowKe
             ...rowSelection,
           }}  
            pagination={false}
+           scroll={{ x: 'max-content' }}
+
+           responsive={{ 
+            xs: {
+              // set the table's scroll behavior on extra small screens
+              scroll: 'scroll',
+              // set the column width for extra small screens
+              columnWidth: 120,
+            },
+            sm: {
+              // set the column width for small screens
+              columnWidth: 150,
+            },
+            md: {
+              // set the column width for medium screens
+              columnWidth: 200,
+            },
+          }}
           
         />
         

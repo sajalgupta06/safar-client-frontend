@@ -145,11 +145,11 @@ const Popular = (props) => {
                   // </div>
 
 
-              <Link href={`/trip/${trip._id}`} key={key}>
+              <Link href={`/trip/${trip.slug}`} key={key}>
               <div className="cards">
                 <div className="card-item">
                   <div className="card-image">
-                    <img src={homeBgImage.src}></img>
+                    <Image src={homeBgImage}></Image>
                   </div>
                   <div className="card-info">
                     <h2 className="card-title">{trip.name}</h2>

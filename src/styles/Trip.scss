@@ -12,7 +12,7 @@
       height: auto;
 
       box-sizing: border-box;
-      margin-bottom: 5rem;
+      margin-bottom: 3rem;
       &-gallery {
         .sliderStyle {
           height: 75vh;
@@ -40,6 +40,8 @@
         border-radius: 1rem;
         // box-shadow: var(--box-shadow);
         background-color: white;
+        flex-wrap: nowrap;
+
 
         &-right {
           .actionBox {
@@ -271,7 +273,25 @@
         font-weight: 500;
         text-transform: capitalize;
         font-size: 1.5rem;
+        display: inline;
+        .days{
+          font-size: 1rem;
+          display: inline;
+        }
       }
+
+      .companyName{
+        p{
+          display: inline;
+        }
+       
+      }
+
+      .rating{
+        
+        font-size: 1rem;
+      }
+
     }
     &-middle {
       display: flex;
@@ -351,7 +371,7 @@
           .modestable {
             width: 100%;
             margin-top: 1rem;
-            padding: 0 1.8rem;
+      
           }
         }
 
@@ -434,16 +454,20 @@
           border-radius: 1rem;
           box-shadow: var(--box-shadow);
           background-color: white;
-          .tripName {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+         
+
+          .availableDates {
+            font-weight: 500;
+            text-transform: capitalize;
+            font-size: 1.2rem;
+            display: inline;
             .icon {
               fill: var(--primarycolour);
               height: 1rem;
               width: 1rem;
             }
           }
+
           &-middle {
             width: 100%;
             display: flex;
@@ -524,5 +548,110 @@
     }
    }
 
- 
- 
+
+
+   @media screen and (max-width: 700px) {
+    .trip{
+     .secContainer{
+       &-top{
+
+        &-heading{
+          flex-direction: column;
+          gap: 1rem;
+
+          &-left{
+            p{
+              text-align: center;
+            }
+          }
+          &-right{
+            .actionBox{
+              .icon{
+              height: 1.5rem;
+              width: 1.5rem;
+              }
+              .like-button{
+                font-size: 0.7rem;
+              }
+            }
+          }
+        }
+       
+       }
+     }
+    }
+   }
+
+   @media screen and (max-width: 700px) {
+   .trip{
+    .secContainer{
+      &-top{
+        &-gallery{
+          .slick-track{
+            height: 35rem;
+          }
+        }
+      }
+    }
+   }
+   }
+
+   @media screen and (max-width: 550px) {
+    .trip{
+     .secContainer{
+      padding-top: 4rem;
+       &-top{
+        margin-bottom: 1rem;
+         &-gallery{
+           .slick-track{
+             height: 22rem;
+           }
+         }
+       }
+     }
+    }
+    }
+
+    @media screen and (max-width: 480px) {
+      .trip{
+       .secContainer{
+         &-middle{
+           &-left{
+             &-details{
+              .ant-tabs-tab
+              {
+                padding-left: 0rem;
+                // padding-right: 14px;
+              }
+               .cardsContainer{
+                .card-heading{
+                  font-size: 1rem;
+                  display: inline;
+                }
+                .card-time{
+                  font-size: 0.8rem;
+                }
+
+               }
+             }
+           }
+         }
+       }
+      }
+      }
+
+
+
+    @media screen and (max-width: 360px) {
+      .trip{
+       .secContainer{
+         &-top{
+           &-gallery{
+             .slick-track{
+               height: 13rem;
+             }
+           }
+         }
+       }
+      }
+      }

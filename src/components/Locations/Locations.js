@@ -53,7 +53,7 @@ const Locations = (props) => {
         breakpoint: 530,
         settings: {
           slidesToShow: 2 ,
-          slidesToScroll: 1,
+     
         },
       },
 
@@ -61,7 +61,7 @@ const Locations = (props) => {
         breakpoint: 400,
         settings: {
           slidesToShow: 2.5,
-          slidesToScroll: 1,
+       
         },
       },
     ],

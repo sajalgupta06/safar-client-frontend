@@ -1,12 +1,13 @@
 import {
   addToFavourite,
   fetchSingleTrip,
+  fetchSingleTripBySlug,
   removeFromFavourite,
 } from "@/actions/req";
 import React, { useContext, useState } from "react";
 import { IoIosArrowForward, IoIosShare, IoIosShareAlt } from "react-icons/io";
 import { StickyContainer, Sticky } from "react-sticky";
-import { Tabs, Select, Popover, Dropdown, Table } from "antd";
+import { Tabs, Select, Popover, Dropdown, Table, Rate } from "antd";
 import { ImCross } from "react-icons/im";
 import { TiTick } from "react-icons/ti";
 import { GiElectric } from "react-icons/gi";
@@ -39,7 +40,7 @@ export default function index({ data }) {
 
   const { TabPane } = Tabs;
   const [top, setTop] = useState(120);
-  const [date, setDate] = useState(data.dates[0]);
+  const [date, setDate] = useState(data?.dates[0]);
 
   const context = useContext(MyContext);
 
@@ -61,7 +62,7 @@ export default function index({ data }) {
   }
 
   const items = [
-    ...data?.dates.map((ele, i) => {
+    data?.dates?.map((ele, i) => {
       return {
         key: i,
         label: (
@@ -78,6 +79,18 @@ export default function index({ data }) {
   ];
 
   const columns = [
+
+    {
+      title: "Price",
+      dataIndex: "basePrice",
+      key: "finalPbasePricerice",
+      render: (ele) => (
+        <>
+          <BiRupee />
+          {ele}
+        </>
+      ),
+    },
     {
       title: "Pickup Point",
       dataIndex: "pickupPoint",
@@ -101,17 +114,7 @@ export default function index({ data }) {
       ),
     },
 
-    {
-      title: "Price",
-      dataIndex: "basePrice",
-      key: "finalPbasePricerice",
-      render: (ele) => (
-        <>
-          <BiRupee />
-          {ele}
-        </>
-      ),
-    },
+
   ];
 
   const rowSelection = {
@@ -260,7 +263,7 @@ export default function index({ data }) {
             <div className="secContainer">
               <div className="secContainer-top">
                 <div className="secContainer-top-gallery">
-                  <Carousel autoplay>
+                  <Carousel >
                     <div>
                       <Image
                         className="sliderStyle"
@@ -293,10 +296,17 @@ export default function index({ data }) {
 
                 <div className="secContainer-top-heading">
                   <div className="secContainer-top-heading-left">
-                    <h2 className="tripName">{data.name}</h2>
-                    <Link href={"/company"}>
+                    <h2 className="tripName">{data.name} <p className="days">({data.days}D)</p> </h2>
+                    <br></br>
+                    <Link href={"/company"}  className="companyName">
+                    
+
                       <p>A&T Adventures </p>
+                   
+                     
+                   
                     </Link>
+                      <Rate className="rating" disabled defaultValue={3.5} /> 
                   </div>
                   <div className="secContainer-top-heading-right">
                     <div className="actionBox">
@@ -322,9 +332,9 @@ export default function index({ data }) {
                             }
                             onClick={() => handleAddToFavourite(data._id)}
                           >
-                            <span class="like-icon">
-                              <div class="heart-animation-1"></div>
-                              <div class="heart-animation-2"></div>
+                            <span className="like-icon">
+                              <div className="heart-animation-1"></div>
+                              <div className="heart-animation-2"></div>
                             </span>
                             Add To Favourite
                           </a>
@@ -346,12 +356,12 @@ export default function index({ data }) {
         })}
     
   </div> */}
- <div className="secContainer-middle-right">
+                <div className="secContainer-middle-right">
              
                     <div className="secContainer-middle-right-heading">
                       <div className="secContainer-middle-right-heading-left">
-                        <h2 className="tripName">
-                          Available Dates and Prices{" "}
+                        <h2 className="availableDates">
+                          Available Dates {" "}
                           <BsFillCalendarFill className="icon" />{" "}
                         </h2>
                         {/* <p>Company Name</p> */}
@@ -405,7 +415,7 @@ export default function index({ data }) {
                       <GiElectric className="icon" /> Highlights
                     </p>
                     <ul>
-                      {data.highlights.map((ele, i) => {
+                      {data?.highlights?.map((ele, i) => {
                         return (
                           <li key={i}>
                             <IoIosArrowForward className="icon" /> {ele}
@@ -426,6 +436,23 @@ export default function index({ data }) {
                       rowKey={(record) => record._id}
                       pagination={false}
                       className="modestable"
+                      scroll={{ x: 'max-content' }}
+                      responsive={{ 
+                        xs: {
+                          // set the table's scroll behavior on extra small screens
+                          scroll: 'scroll',
+                          // set the column width for extra small screens
+                          columnWidth: 120,
+                        },
+                        sm: {
+                          // set the column width for small screens
+                          columnWidth: 150,
+                        },
+                        md: {
+                          // set the column width for medium screens
+                          columnWidth: 200,
+                        },
+                      }}
                     />
                   </div>
 
@@ -434,7 +461,7 @@ export default function index({ data }) {
                       <TiTick className="icon tick" /> Inclusions
                     </p>
                     <ul>
-                      {data.inclusions.map((ele, i) => {
+                      {data?.inclusions?.map((ele, i) => {
                         return (
                           <li key={i}>
                             <IoIosArrowForward className="icon" /> {ele}
@@ -451,7 +478,7 @@ export default function index({ data }) {
                       Exclusion
                     </p>
                     <ul>
-                      {data.exclusions.map((ele, i) => {
+                      {data?.exclusions?.map((ele, i) => {
                         return (
                           <li key={i}>
                             <IoIosArrowForward className="icon" /> {ele}
@@ -465,7 +492,7 @@ export default function index({ data }) {
                     <StickyContainer>
                       <Tabs defaultActiveKey="1" renderTabBar={renderTabBar}>
                         <TabPane tab="Itinerary" key="1">
-                          {!data.itinerary && <p>No Itinerary Available</p>}
+                          {!data?.itinerary && <p>No Itinerary Available</p>}
                           <Tabs defaultActiveKey="1" tabPosition="left">
                             {data.itinerary &&
                               Object.keys(data.itinerary).map((ele, i) => (
@@ -537,10 +564,8 @@ export default function index({ data }) {
 }
 
 export const getServerSideProps = async (context) => {
-  const id = context.params.id;
-
-  const res = await fetchSingleTrip(id);
-
+  const slug = context.params.slug;
+  const res = await fetchSingleTripBySlug(slug);
   if (res.statusCode == "10000") {
     return {
       props: {
@@ -549,7 +574,9 @@ export const getServerSideProps = async (context) => {
     };
   } else {
     return {
-      props: {},
+      props: {
+        data:[]
+      },
     };
   }
 };

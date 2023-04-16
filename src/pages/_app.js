@@ -33,7 +33,7 @@ export const MyContext = createContext();
 export default function App({ Component, pageProps }) {
 
   let iState = {
-    // isAuthenticated:false,
+    isAuthenticated:false,
     user:{}
   };
 

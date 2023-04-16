@@ -55,7 +55,7 @@ const Offer = (props) => {
                   </div>
               
                   <div className="card-buttons">
-                  <Link href={`/trip/${trip._id}`}>
+                  <Link href={`/trip/${trip.slug}`}>
 
                     <Button type="primary" shape="circle" >{">"}</Button>
                     </Link>
