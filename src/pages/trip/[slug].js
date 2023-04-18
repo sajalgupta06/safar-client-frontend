@@ -1,30 +1,30 @@
 import {
   addToFavourite,
-  fetchSingleTrip,
   fetchSingleTripBySlug,
   removeFromFavourite,
 } from "@/actions/req";
 import React, { useContext, useState } from "react";
-import { IoIosArrowForward, IoIosShare, IoIosShareAlt } from "react-icons/io";
+import { IoIosArrowForward, IoIosShareAlt } from "react-icons/io";
 import { StickyContainer, Sticky } from "react-sticky";
-import { Tabs, Select, Popover, Dropdown, Table, Rate } from "antd";
+import { Tabs, Dropdown, Table, Rate } from "antd";
 import { ImCross } from "react-icons/im";
 import { TiTick } from "react-icons/ti";
 import { GiElectric } from "react-icons/gi";
-import { Affix, Button } from "antd";
-import homeBgImage from "../../static/images/homeBgImage.jpg";
+import {  Button } from "antd";
 import { Carousel, Image, Modal } from "antd";
 import moment from "moment";
 import Link from "next/link";
-import DataNotFound from "../../components/DataNotFound";
-import { BiRupee, BiShare } from "react-icons/bi";
+import { BiRupee } from "react-icons/bi";
 import { BsFillCalendarFill } from "react-icons/bs";
 import { AiTwotoneHeart } from "react-icons/ai";
-import { AiFillHeart } from "react-icons/ai";
 import { MyContext } from "../_app";
 import { alerts } from "@/utils/alert";
 import Tooltip from "@/components/Tooltip";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+
+const DataNotFound = dynamic(() => import('../../components/DataNotFound'))
+
 
 export default function index({ data }) {
   const location = data.name || " ";
@@ -62,7 +62,7 @@ export default function index({ data }) {
   }
 
   const items = [
-    data?.dates?.map((ele, i) => {
+    ...data?.dates?.map((ele, i) => {
       return {
         key: i,
         label: (

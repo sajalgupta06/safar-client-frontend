@@ -1,16 +1,21 @@
-import { bookTrip, fetchSingleTrip, fetchUser } from "@/actions/req";
+import { bookTrip, fetchSingleTrip } from "@/actions/req";
 import { useRouter } from "next/router";
-import React, { useContext, useEffect, useState } from "react";
-import { MyContext } from "../_app";
-import { Checkbox, Progress, Select, Steps, Table } from "antd";
-import Date from "@/components/PurchaseComponents/Date";
-import Passengers from "@/components/PurchaseComponents/Passengers";
-import Checkout from "@/components/PurchaseComponents/Checkout";
+import React, {  useEffect, useState } from "react";
+import { Steps } from "antd";
 import { alerts } from "@/utils/alert";
-import Preview from "@/components/PurchaseComponents/Preview";
+import Link from "next/link";
+import dynamic from "next/dynamic";
+
+
+
+const Date = dynamic(() => import('@/components/PurchaseComponents/Date'))
+const Passengers = dynamic(() => import('@/components/PurchaseComponents/Passengers'))
+const Checkout = dynamic(() => import('@/components/PurchaseComponents/Checkout'))
+const Preview = dynamic(() => import('@/components/PurchaseComponents/Preview'))
+
 
 export default function index({data}) {
-  const context = useContext(MyContext);
+ 
   const router = useRouter();
 
   const [tabs, setTabs] = useState(0);
@@ -50,7 +55,7 @@ export default function index({data}) {
     }
   };
 
- 
+
  
   const handleNext = () => {
 
@@ -85,6 +90,7 @@ export default function index({data}) {
     
 
       setTabs(2)
+     
       return
 
     }
@@ -153,7 +159,7 @@ export default function index({data}) {
 
   return (
     <>
-      <section className="purchase section">
+      <section className="purchase section" id = "purchase">
         <div className="purchase-container">
           <div className="purchase-container-top">
             <Steps
@@ -220,12 +226,16 @@ export default function index({data}) {
           </div>
 
           <div className="purchase-container-bottom">
+            <Link href="#purchase"> 
             <button className="btn prev" onClick={handlePrev}>
               Prev
             </button>
+            </Link>
+              <Link href="#purchase">
             <button className="btn next" onClick={handleNext}>
               Next
             </button>
+              </Link>
           </div>
         </div>
       </section>

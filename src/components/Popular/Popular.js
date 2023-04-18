@@ -1,26 +1,15 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useRef } from "react";
 import { BsArrowLeftShort, BsArrowRightShort, BsDot } from "react-icons/bs";
-import { AiTwotoneHeart } from "react-icons/ai";
 import homeBgImage from "../../static/images/homeBgImage.jpg";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {
-  addToFavourite,
-  fetchPopularTrips,
-  removeFromFavourite,
-} from "../../actions/req";
-
-import { Loader } from "../Loader/Loader.js";
-import { Button, Modal } from "antd";
-
 import { MyContext } from "@/pages/_app";
-import { alerts } from "@/utils/alert";
 import Link from "next/link";
 import Image from "next/image";
 import { BiRupee } from "react-icons/bi";
+import placeHolderImage from '../../static/images/placeholder-image.png'
 
 const Popular = (props) => {
   const { data } = props;
@@ -61,7 +50,7 @@ const Popular = (props) => {
         breakpoint: 530,
         settings: {
           slidesToShow: 2 ,
-          slidesToScroll: 1,
+          slidesToScroll: 2,
         },
       },
 
@@ -69,7 +58,7 @@ const Popular = (props) => {
         breakpoint: 400,
         settings: {
           slidesToShow: 2.5,
-          slidesToScroll: 1,
+          slidesToScroll: 2.5,
         },
       },
     ],
@@ -149,7 +138,10 @@ const Popular = (props) => {
               <div className="cards">
                 <div className="card-item">
                   <div className="card-image">
-                    <Image src={homeBgImage}></Image>
+                    <Image src={homeBgImage} 
+                          alt={trip.name}
+                          blurDataURL={placeHolderImage}
+                    ></Image>
                   </div>
                   <div className="card-info">
                     <h2 className="card-title">{trip.name}</h2>

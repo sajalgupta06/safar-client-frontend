@@ -50,7 +50,7 @@ export default function Preview({ticketData , tripData ,acceptTerms,setAcceptTer
 
   return (
    <>
-   <div className='preview'>
+   <div className='preview' id='preview'>
     <div className='form'>
 
   

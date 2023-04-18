@@ -1,12 +1,18 @@
-import { fetchMultipleTrips, fetchUser } from "@/actions/req";
-import React, { useContext, useEffect, useState } from 'react'
+import {  fetchUser } from "@/actions/req";
+import React, {  useEffect, useState } from 'react'
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar } from 'antd'
-import Account from "@/components/ProfileComponents/Account";
-import Bookings from "@/components/ProfileComponents/Bookings";
-import Favourites from "@/components/ProfileComponents/Favourites";
-import Notifications from "@/components/ProfileComponents/Notifications";
-import Policy from "@/components/ProfileComponents/Policy";
+import dynamic from "next/dynamic";
+
+
+const Account = dynamic(() => import('@/components/ProfileComponents/Account'))
+const Bookings = dynamic(() => import('@/components/ProfileComponents/Bookings'))
+const Favourites = dynamic(() => import('@/components/ProfileComponents/Favourites'))
+const Notifications = dynamic(() => import('@/components/ProfileComponents/Notifications'))
+const Policy = dynamic(() => import('@/components/ProfileComponents/Policy'))
+
+
+
 export default function index() {
 
   useEffect(() => {
@@ -45,6 +51,9 @@ export default function index() {
   return (
     <>
      <section className='profile section'>
+     
+
+     
     <div className='profileContainer'>
         <div className='profileContainer-left'>
         <div className='profileContainer-left-top'>
@@ -76,8 +85,10 @@ export default function index() {
         <div className='profileContainer-right-bottom'></div>
         </div>
     </div>
-
-  </section>
+    
+   
+    </section>
+  
     </>
   )
 }

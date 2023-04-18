@@ -9,7 +9,7 @@ let token = ""
 
 const customHeaders={
   "Content-Type":"application/json",
-  "x-api-key":"$2b$10$J/ty1/.nmtL7TCbJ3m5D2.2bc0EYmSswd2NlkSe4R5bZ94pOwMNq2"
+  "x-api-key":"$2b$10$J/ty1/.nmtL7TCbJ3m5D2.2bc0EYmSswd2NlkSe4R5bZ94pOwMNq2",
 }
 
 const customHeadersWithAuth={
@@ -39,7 +39,8 @@ const postApi = async (path,data,isAuthenticated)=>{
   
       "Content-Type":"application/json",
       "x-api-key":"$2b$10$J/ty1/.nmtL7TCbJ3m5D2.2bc0EYmSswd2NlkSe4R5bZ94pOwMNq2",
-       "Authorization":`Bearer ${token}`
+       "Authorization":`Bearer ${token}`,
+       'Cache-Control': 'public, s-maxage=1000, stale-while-revalidate=590'
        
      }
   }
@@ -49,6 +50,7 @@ const postApi = async (path,data,isAuthenticated)=>{
   
       "Content-Type":"application/json",
       "x-api-key":"$2b$10$J/ty1/.nmtL7TCbJ3m5D2.2bc0EYmSswd2NlkSe4R5bZ94pOwMNq2",
+      'Cache-Control': 'public, s-maxage=1000, stale-while-revalidate=590'
        
      }
   }
@@ -84,7 +86,8 @@ const getApi = async (path,isAuthenticated)=>{
   
       "Content-Type":"application/json",
       "x-api-key":"$2b$10$J/ty1/.nmtL7TCbJ3m5D2.2bc0EYmSswd2NlkSe4R5bZ94pOwMNq2",
-       "Authorization":`Bearer ${token}`
+       "Authorization":`Bearer ${token}`,
+       'Cache-Control': 'public, s-maxage=1000, stale-while-revalidate=590'
        
      }
   }
@@ -94,6 +97,7 @@ const getApi = async (path,isAuthenticated)=>{
   
       "Content-Type":"application/json",
       "x-api-key":"$2b$10$J/ty1/.nmtL7TCbJ3m5D2.2bc0EYmSswd2NlkSe4R5bZ94pOwMNq2",
+      'Cache-Control': 'public, s-maxage=1000, stale-while-revalidate=590'
        
      }
   }
@@ -145,7 +149,7 @@ const putApi = async (path,data,isAuthenticated)=>{
 
   return await fetch(`${URL}${path}`, {
     method: "put",
-    headers: header,
+    headers: header,    
     body: JSON.stringify(data),
   })  .then((data) => data.json())
   .then((data) => {
@@ -193,8 +197,54 @@ export const  fetchUser  =  async () => {
 };
 
 export const  updateUser  =  async (data) => {
+  
+  const formData = new FormData()
+   
 
-  return await putApi('/user',data,true)
+  const keys = Object.keys(data)
+  
+  for (let index = 0; index < keys.length; index++) {
+    const element = data[keys[index]];
+
+    formData.append(keys[index],element)
+    console.log(keys[index], element)
+    
+  }
+
+
+  if (typeof window !== 'undefined') {
+    // Perform localStorage action
+    //  token = localStorage.getItem('a_token')
+
+     token =  Cookies.get("a_token") 
+  }
+ 
+  let header;
+
+ 
+    header = {
+  
+      "Content-Type":"multipart/form-data",
+      "x-api-key":"$2b$10$J/ty1/.nmtL7TCbJ3m5D2.2bc0EYmSswd2NlkSe4R5bZ94pOwMNq2",
+       "Authorization":`Bearer ${token}`
+       
+     }
+  
+
+
+
+  return await fetch(`${URL}/user`, {
+    method: "post",
+    headers: header,
+    body: formData,
+  })  .then((data) => data.json())
+  .then((data) => {
+    return data;
+  });
+
+
+
+ 
 
 };
 

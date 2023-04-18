@@ -28,7 +28,7 @@
         align-items: flex-start;
         flex-direction: column;
         #horizontal_login {
-          width: 60%;
+          width: 100%;
         }
 
         .buttonDiv {
@@ -51,7 +51,7 @@
         margin-bottom: 5rem;
         .form {
           display: flex;
-          width: 70%;
+          width: 100%;
           align-items: center;
           flex-direction: column;
           grid-gap: 1.5rem;
@@ -69,6 +69,9 @@
             .label {
               color: black;
               width: 13rem;
+            }
+            .value{
+              width: 100%;
             }
           }
         }
@@ -122,6 +125,12 @@
   }
 }
 
+@media screen and (max-width: 860px) {
+  .purchase {
+    padding: 3rem 1rem;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .purchase {
     padding: 3rem 1rem;
@@ -131,5 +140,21 @@
 @media screen and (max-width: 600px) {
   .purchase {
     padding: 3rem 1rem;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .purchase {
+    &-container {
+      &-middle {
+        .preview {
+          .form {
+            .item {
+              flex-direction: column;
+            }
+          }
+        }
+      }
+    }
   }
 }

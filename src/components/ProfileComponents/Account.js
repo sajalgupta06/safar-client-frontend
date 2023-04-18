@@ -27,7 +27,7 @@ export default function Account(props) {
   const [gender,setGender] = useState()
   const [errors,setErrors] = useState({})
   const [formData,setFormData] = useState()
-
+  const [photo,setPhoto] = useState()
 
   
 useEffect(() => {
@@ -106,6 +106,12 @@ useEffect(() => {
 
     let data = values;
 
+
+    if(photo)
+    {
+      data.photo = photo
+    }
+   
     try {
 
       const res = await updateUser(data)
@@ -163,10 +169,20 @@ useEffect(() => {
   ];
 
 
+  const handleUploadPhoto = (e)=>{
+
+    setPhoto(e.target.files[0])
+
+  }
+
+useEffect(() => {
+ console.log(photo)
+}, [photo]);
   return (
     <>
     {!userData && <CompLoader/>}
     {userData && (
+     
       <div className='Account'>
     <Form
    {...formItemLayout}
@@ -306,8 +322,12 @@ useEffect(() => {
 
 
    <Form.Item  label="Aadhar Card" name="photo"  initialValue={userData?.adhr} >
-  <input type = "file" id = "file"  accept="image/*" ref={inputRef} style={{display: 'none'}} ></input>
- <Button type="file"    onClick={()=>inputRef.current.click()}   icon={<UploadOutlined />}>Click to Upload</Button>
+    
+  <input type = "file" id = "file"    accept="image/*" 
+    onChange={(e)=>handleUploadPhoto(e)}
+  // ref={inputRef} style={{display: 'none'}}
+   ></input>
+ {/* <Button type="file"    onClick={()=>inputRef.current.click()}   icon={<UploadOutlined />}>Click to Upload</Button> */}
 
  </Form.Item>
 
@@ -318,6 +338,7 @@ useEffect(() => {
      </Button>
    </Form.Item>
  </Form>
+     
       </div>
     )}
 

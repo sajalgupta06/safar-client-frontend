@@ -24,10 +24,10 @@ import reducer from "@/components/reducer";
 import { fetchUser } from "@/actions/req";
 import { Loader } from "@/components/Loader/Loader";
 import { ConfigProvider } from 'antd';
-
 import Layout from "@/components/Layout";
-
 export const MyContext = createContext();
+import NextNProgress from 'nextjs-progressbar';
+
 
 
 export default function App({ Component, pageProps }) {
@@ -39,6 +39,8 @@ export default function App({ Component, pageProps }) {
 
   const [data, dispatch] = useReducer(reducer,iState);
   const [loading ,setLoading] = useState(false)
+
+
 const handleAuthentication = async() =>{
 
  
@@ -100,7 +102,9 @@ handleAuthentication()
           }}
         >
      
+     <NextNProgress color=" hsl(26,93%,50%)" startPosition={0.3} stopDelayMs={200} height={8} showOnShallow={true} options={{ showSpinner: false }} />
       <Layout>
+
         <Component {...pageProps} />
       </Layout>
       </ConfigProvider>

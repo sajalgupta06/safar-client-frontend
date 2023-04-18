@@ -1,16 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
-import loginImage from "../../static/images/login.jpg";
+import React, { useContext, useState } from "react";
 import { Button } from "antd";
 import { PoweroffOutlined } from "@ant-design/icons";
 import { useRouter } from "next/router";
 import { MyContext } from "../_app";
 import Image from "next/image";
-import Link from "next/link";
 import { getOtp, verifyOtp } from "@/actions/req";
 import { alerts } from "@/utils/alert";
 import Cookies from 'js-cookie'
-
-// import {successMessage,infoMessage} from '../../utils/message'
 
 export default function Login() {
 
@@ -182,7 +178,7 @@ const sendOtp = async () => {
           </div>
           <div className="img-container">
             {/* <img src={loginImage}></img> */}
-            <img
+            <Image
               src={
                 "https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
               }

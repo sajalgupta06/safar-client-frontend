@@ -4,6 +4,8 @@ import { Button, Checkbox, Table } from "antd";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import {BiRupee} from 'react-icons/bi'
+import DataNotFound from '../DataNotFound/index'
+
 export default function Bookings() {
   const [ticketData, setTicketData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -78,13 +80,35 @@ export default function Bookings() {
   return (
     <>
       <section className="bookings ">
-        <Table 
+        {ticketData?.length==0?
+        <DataNotFound/>
+        : 
+           <Table 
         columns={columns} 
         dataSource={ticketData}
          pagination={false} 
          bordered
+         scroll={{ x: 'max-content' }}
+
+         responsive={{ 
+          xs: {
+            // set the table's scroll behavior on extra small screens
+            scroll: 'scroll',
+            // set the column width for extra small screens
+            columnWidth: 120,
+          },
+          sm: {
+            // set the column width for small screens
+            columnWidth: 150,
+          },
+          md: {
+            // set the column width for medium screens
+            columnWidth: 200,
+          },
+        }}
          
-         />
+         />}
+    
       </section>
     </>
   );

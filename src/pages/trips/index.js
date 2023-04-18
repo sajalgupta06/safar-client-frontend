@@ -2,24 +2,18 @@ import { fetchCollectionNames, fetchSeachTrips } from "@/actions/req";
 import { Dropdown, Form, Input, InputNumber } from "antd";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { AiFillFilter, AiOutlineClose, AiOutlineSearch } from "react-icons/ai";
-import { BsArrowRightShort, BsSortDown, BsSortDownAlt } from "react-icons/bs";
-import {
-  MdAirportShuttle,
-  MdBathtub,
-  MdKingBed,
-  MdLocationOn,
-} from "react-icons/md";
-import { FaWifi } from "react-icons/fa";
-
+import { AiFillFilter, AiOutlineClose } from "react-icons/ai";
+import {  BsSortDown, BsSortDownAlt } from "react-icons/bs";
 import homeBgImage from "../../static/images/homeBgImage.jpg";
-import DataNotFound from "../../components/DataNotFound";
 import Image from "next/image";
 import { BiRupee } from "react-icons/bi";
 import { CompLoader } from "@/components/Loader/CompLoader";
 import { alerts } from "@/utils/alert";
-import { decryptQueryParams, encryptQueryParams } from "query-string-hash";
 import { useRouter } from "next/router";
+import placeHolderImage from '../../static/images/placeholder-image.png'
+import dynamic from "next/dynamic";
+
+const DataNotFound = dynamic(() => import('../../components/DataNotFound'))
 
 export default function index({
   tripData,
@@ -29,8 +23,11 @@ export default function index({
 }) {
   const router = useRouter();
 
+    const initialSort = {sort:filterValues.sort !=undefined? filterValues.sort:"popular",sortDirection:filterValues.sortDirection !=undefined? filterValues.sortDirection:-1}
+
   const [filterTags,setFiltersTags] = useState(filterValues);
-  const [sort, setSort] = useState(filterValues);
+  
+  const [sort, setSort] = useState(initialSort );
   const [dayState, setDayState] = useState([
     filterValues?.minDays,
     filterValues?.maxDays,
@@ -71,10 +68,10 @@ export default function index({
       maxPrice: priceState[1]
     };
 
-    router.push({
-      pathname:"/trips",
-      query:{...filterData}
-    })
+
+    const query = "?"+new URLSearchParams(filterData).toString()
+
+    router.push(query, undefined,{ shallow: true })
 
   };
 
@@ -88,10 +85,9 @@ export default function index({
       maxPrice: priceState[1]
     };
 
-      router.push({
-        pathname:"/trips",
-        query:{...filterData}
-      })
+      const query = "?"+ new URLSearchParams(filterData).toString()
+
+      router.push(query,undefined, { shallow: true })
 
     
   };
@@ -406,9 +402,8 @@ console.log(sort)},
                       <Search
                         placeholder="Search"
                         enterButton
-                        style={{
-                          width: "30%",
-                        }}
+                        
+                        className="searchBar"
                         value={searchData}
                         onChange={(e)=>setSearchData(e.target.value)}
                         onSearch={onSearch}
@@ -445,53 +440,28 @@ console.log(sort)},
                   </div>
                   <div className="contentDiv">
                     <div className="mainContent grid">
-                      {data?.map((ele, i) => {
+                      {data?.map((trip, key) => {
                         return (
-                          <div className="singleOffer" key={i}>
-                            <div className="destImage">
-                              <Image src={homeBgImage} alt="Image Name" />
-                              <span className="discount">30% off</span>
-                            </div>
-                            <div className="offerBody">
-                              <div className="price flex">
-                                <h4>Rs. 1000</h4>
-                                <span className="status">For Rent</span>
-                              </div>
-                              <div className="amenities flex">
-                                <div className="singleAmenity flex">
-                                  <MdKingBed className="icon" />
-                                  <small>2 Bed</small>
-                                </div>
-
-                                <div className="singleAmenity flex">
-                                  <MdBathtub className="icon" />
-                                  <small>1 bathroom</small>
-                                </div>
-
-                                <div className="singleAmenity flex">
-                                  <FaWifi className="icon" />
-                                  <small>Wi-fi</small>
-                                </div>
-
-                                <div className="singleAmenity flex">
-                                  <MdAirportShuttle className="icon" />
-                                  <small>Shuttle</small>
+                              <Link href={`/trip/${trip.slug}`} key={key}>
+                              <div className="cards">
+                                <div className="card-item">
+                                  <div className="card-image">
+                                    <Image 
+                                    // src={trip?.photos.length>0 && trip.photos[0].src} 
+                                    src={homeBgImage} 
+                                          alt={placeHolderImage}
+                                          blurDataURL={placeHolderImage.src}
+                                    ></Image>
+                                  </div>
+                                  <div className="card-info">
+                                    <h2 className="card-title">{trip.name}</h2>
+                                    <p className="card-intro">starting at <span>
+                                    <BiRupee className="icon"/> {trip.finalPrice}
+                                      </span> </p>
+                                  </div>
                                 </div>
                               </div>
-
-                              <div className="location flex">
-                                <MdLocationOn className="icon" />
-                                <small>450 Vines #310 London</small>
-                              </div>
-
-                              <Link href={`/trip/${ele.slug}`} scroll={true}>
-                                <button className="btn flex">
-                                  View Details
-                                  <BsArrowRightShort className="icon" />
-                                </button>
-                              </Link>
-                            </div>
-                          </div>
+                </Link>
                         );
                       })}
                     </div>

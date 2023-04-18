@@ -1,18 +1,24 @@
 import React, { useContext, useEffect, useState } from "react";
-
+import dynamic from 'next/dynamic'
 import { FloatButton } from "antd";
-import Search from "@/components/Search/Search";
-import Popular from "@/components/Popular/Popular";
-import Offer from "@/components/Offer/Offer";
-import About from "@/components/About/About";
-import PhotoGallery from "@/components/PhotoGallery/PhotoGallery.js";
-import { fetchPopularTrips, fetchUser } from "@/actions/req";
+import { fetchPopularTrips } from "@/actions/req";
 import { MyContext } from "./_app";
 import Banner from "@/components/Banner/Banner";
 import banner1 from '../static/images/banner1.jpg'
 import banner2 from '../static/images/banner2.jpg'
 import Locations from "@/components/Locations/Locations";
 import Collections from "@/components/Collections/Collections";
+
+
+
+const Search = dynamic(() => import('@/components/Search/Search'))
+const Popular = dynamic(() => import('@/components/Popular/Popular'))
+const Offer = dynamic(() => import('@/components/Offer/Offer'))
+const About = dynamic(() => import('@/components/About/About'))
+const PhotoGallery = dynamic(() => import('@/components/PhotoGallery/PhotoGallery.js'))
+
+
+
 export default function Index({ popularData }) {
   const context = useContext(MyContext);
 
