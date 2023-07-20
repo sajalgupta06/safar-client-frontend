@@ -1,10 +1,11 @@
 import { bookTrip, fetchSingleTrip } from "@/actions/req";
 import { useRouter } from "next/router";
-import React, {  useEffect, useState } from "react";
+import React, {  useContext, useEffect, useState } from "react";
 import { Steps } from "antd";
 import { alerts } from "@/utils/alert";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { MyContext } from "../_app";
 
 
 
@@ -25,6 +26,7 @@ export default function index({data}) {
   const [selectedRowKeys, setSelectedRowKeys] = useState();
 
 
+
   const [passengerState, setPassengerState] = useState({
     key:"",
     name: "",
@@ -41,12 +43,15 @@ export default function index({data}) {
 
   const [currentStep, setCurrentStep] = useState(tabs);
 
+
+  const context = useContext(MyContext)
+
   const checkAuthenticate = () => {
 
-    // if (context?.isAuthenticated) {
-    // } else {
-    //   return router.push("/login");
-    // }
+    if (context?.isAuthenticated) {
+    } else {
+      return router.push("/login");
+    }
   };
 
   const handlePrev = () => {
@@ -149,6 +154,8 @@ export default function index({data}) {
     }
 
 }
+
+
   useEffect(() => {
     setCurrentStep(tabs);
   }, [tabs]);

@@ -6,11 +6,11 @@ import {
 import React, { useContext, useState } from "react";
 import { IoIosArrowForward, IoIosShareAlt } from "react-icons/io";
 import { StickyContainer, Sticky } from "react-sticky";
-import { Tabs, Dropdown, Table, Rate } from "antd";
+import { Tabs, Dropdown, Table, Rate, Row, Col } from "antd";
 import { ImCross } from "react-icons/im";
 import { TiTick } from "react-icons/ti";
 import { GiElectric } from "react-icons/gi";
-import {  Button } from "antd";
+import { Button } from "antd";
 import { Carousel, Image, Modal } from "antd";
 import moment from "moment";
 import Link from "next/link";
@@ -23,8 +23,7 @@ import Tooltip from "@/components/Tooltip";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 
-const DataNotFound = dynamic(() => import('../../components/DataNotFound'))
-
+const DataNotFound = dynamic(() => import("../../components/DataNotFound"));
 
 export default function index({ data }) {
   const location = data.name || " ";
@@ -67,8 +66,8 @@ export default function index({ data }) {
         key: i,
         label: (
           <p>
-            {moment(ele.startDate).format("DD-MMM-YYYY")} to{" "}
-            {moment(ele.endDate).format("DD-MMM-YYYY")}
+            {moment(ele.startDate, "DD-MM-YYYY").format("DD-MMM-YYYY")} to{" "}
+            {moment(ele.endDate, "DD-MM-YYYY").format("DD-MMM-YYYY")}
           </p>
         ),
         onClick: () => {
@@ -79,11 +78,10 @@ export default function index({ data }) {
   ];
 
   const columns = [
-
     {
       title: "Price",
-      dataIndex: "basePrice",
-      key: "finalPbasePricerice",
+      dataIndex: "amount",
+      key: "amount",
       render: (ele) => (
         <>
           <BiRupee />
@@ -97,24 +95,22 @@ export default function index({ data }) {
       key: "pickupPoint",
     },
     {
+      title: "Pickup Mode",
+      dataIndex: "pickupMode",
+      key: "pickupMode",
+    },
+
+    {
       title: "Drop Point",
       dataIndex: "dropPoint",
       key: "dropPoint",
     },
     {
       title: "Mode",
-      dataIndex: "dropTransMode",
-      key: "dropTransMode",
-      textWrap: "wrap",
-
-      render: (element, record) => (
-        <>
-          {record.pickupTransMode} , {record.dropTransMode}
-        </>
-      ),
+      dataIndex: "dropMode",
+      key: "dropMode",
+      // textWrap: "wrap",
     },
-
-
   ];
 
   const rowSelection = {
@@ -263,7 +259,7 @@ export default function index({ data }) {
             <div className="secContainer">
               <div className="secContainer-top">
                 <div className="secContainer-top-gallery">
-                  <Carousel >
+                  <Carousel>
                     <div>
                       <Image
                         className="sliderStyle"
@@ -296,17 +292,17 @@ export default function index({ data }) {
 
                 <div className="secContainer-top-heading">
                   <div className="secContainer-top-heading-left">
-                    <h2 className="tripName">{data.name} <p className="days">({data.days}D)</p> </h2>
+                    <h2 className="tripName">
+                      {data.name}{" "}
+                      <p className="days">
+                        ({data?.days}D {data?.nights}N)
+                      </p>{" "}
+                    </h2>
                     <br></br>
-                    <Link href={"/company"}  className="companyName">
-                    
-
+                    <Link href={"/company"} className="companyName">
                       <p>A&T Adventures </p>
-                   
-                     
-                   
                     </Link>
-                      <Rate className="rating" disabled defaultValue={3.5} /> 
+                    <Rate className="rating" disabled defaultValue={3.5} />
                   </div>
                   <div className="secContainer-top-heading-right">
                     <div className="actionBox">
@@ -344,71 +340,96 @@ export default function index({ data }) {
                   </div>
                 </div>
               </div>
-              <div className="secContainer-middle">
-                {/* <div className='secContainer-middle-tagBox'>
-        {Array.from({length:6}).map(ele=>{
-          return(
-            <div className='secContainer-middle-tagBox-box'>
-            <p>No. Of Places</p>
-            <p>5</p>
-          </div>
-          )
-        })}
-    
-  </div> */}
-                <div className="secContainer-middle-right">
-             
-                    <div className="secContainer-middle-right-heading">
-                      <div className="secContainer-middle-right-heading-left">
-                        <h2 className="availableDates">
-                          Available Dates {" "}
-                          <BsFillCalendarFill className="icon" />{" "}
-                        </h2>
-                        {/* <p>Company Name</p> */}
-                      </div>
-                      <div className="secContainer-middle-right-heading-middle">
-                        <Dropdown
-                          menu={{
-                            items,
-                          }}
-                          placement="bottom"
-                          trigger={"click"}
-                          arrow={{
-                            pointAtCenter: true,
-                          }}
-                        >
-                          <Button className="dateBtn">
-                            {(date &&
-                              `
-          ${moment(date.startDate).format("DD-MMM-YYYY")} to 
-            ${moment(date.endDate).format("DD-MMM-YYYY")}`) ||
-                              "Choose Dates"}
-                          </Button>
-                        </Dropdown>
-                      </div>
 
-                      <div className="secContainer-middle-right-heading-right">
-                        <Link
-                          href={{
-                            pathname: "/purchase",
-                            query: { id: data._id, name: data.name }, // thedata data
-                          }}
-                        >
-                          <Button type="primary" className="buyButton">
-                            Book Now
-                          </Button>{" "}
-                        </Link>
-                      </div>
+              <div className="secContainer-top-otherDetails">
+                    <div className="box">
+                   
+                      
+                          <div className="item">
+                            <p className="title">Region</p>
+                            <p className="value">{data?.region}</p>
+                          </div>
+                  
+                          <div className="item">
+                            <p className="title">No. Of Location</p>
+                            <p className="value">{data?.locations.length}</p>
+                          </div>
+                     
+                  
+                          <div className="item">
+                            <p className="title">Age limit</p>
+                            <p className="value">{data?.ageLimit}+</p>
+                          </div>
+                  
+
+                    
+                          <div className="item">
+                            <p className="title">Last Date to Register</p>
+                            <p className="value">{data?.lastDate}</p>
+                          </div>
+            
+
+
+                     
+
                     </div>
-                 
+
+                   
+
+                    {/* <p>{data?.about}</p> */}
+                  </div>
+                  
+              <div className="secContainer-middle">
+     
+                <div className="secContainer-middle-right">
+                  <div className="secContainer-middle-right-heading">
+                    <div className="secContainer-middle-right-heading-left">
+                      <h2 className="availableDates">
+                        Available Dates <BsFillCalendarFill className="icon" />{" "}
+                      </h2>
+                      {/* <p>Company Name</p> */}
+                    </div>
+                    <div className="secContainer-middle-right-heading-middle">
+                      <Dropdown
+                        menu={{
+                          items,
+                        }}
+                        placement="bottom"
+                        trigger={"click"}
+                        arrow={{
+                          pointAtCenter: true,
+                        }}
+                      >
+                        <Button className="dateBtn">
+                          {(date &&
+                            `
+          ${moment(date.startDate, "DD-MM-YYYY").format("DD-MMM-YYYY")} to 
+            ${moment(date.endDate, "DD-MM-YYYY").format("DD-MMM-YYYY")}`) ||
+                            "Choose Dates"}
+                        </Button>
+                      </Dropdown>
+                    </div>
+
+                    <div className="secContainer-middle-right-heading-right">
+                      <Link
+                        href={{
+                          pathname: "/purchase",
+                          query: { id: data._id, name: data.name }, // thedata data
+                        }}
+                      >
+                        <Button type="primary" className="buyButton">
+                          Book Now
+                        </Button>{" "}
+                      </Link>
+                    </div>
+                  </div>
                 </div>
 
                 <div className="secContainer-middle-left">
-                  <div className="secContainer-middle-left-about">
-                    <h2>About</h2>
-                    <p>{data?.about}</p>
-                  </div>
-
+                <div className="secContainer-middle-left-about">
+                      <h2>About</h2>
+                      <p>{data?.about}</p>
+                    </div>
                   <div className="secContainer-middle-left-highlights">
                     <p>
                       {" "}
@@ -436,11 +457,11 @@ export default function index({ data }) {
                       rowKey={(record) => record._id}
                       pagination={false}
                       className="modestable"
-                      scroll={{ x: 'max-content' }}
-                      responsive={{ 
+                      scroll={{ x: "max-content" }}
+                      responsive={{
                         xs: {
                           // set the table's scroll behavior on extra small screens
-                          scroll: 'scroll',
+                          scroll: "scroll",
                           // set the column width for extra small screens
                           columnWidth: 120,
                         },
@@ -494,15 +515,15 @@ export default function index({ data }) {
                         <TabPane tab="Itinerary" key="1">
                           {!data?.itinerary && <p>No Itinerary Available</p>}
                           <Tabs defaultActiveKey="1" tabPosition="left">
-                            {data.itinerary &&
-                              Object.keys(data.itinerary).map((ele, i) => (
+                            {data?.itinerary &&
+                              Object.keys(data?.itinerary).map((ele, i) => (
                                 <TabPane tab={`Day-${i + 1}`} key={i + 1}>
                                   <div className="cardsContainer">
-                                    {data.itinerary[ele].data.map((card, i) => {
+                                    {data.itinerary[ele]?.map((card, i) => {
                                       return (
                                         <div className="card" key={i}>
                                           <p className="card-heading">
-                                            {card.heading}{" "}
+                                            {card.title}{" "}
                                           </p>{" "}
                                           <p className="card-time">
                                             {moment(card.time, [
@@ -510,7 +531,7 @@ export default function index({ data }) {
                                             ]).format("hh:mm A")}
                                           </p>
                                           <p className="card-about">
-                                            {card.about}
+                                            {card.description}
                                           </p>
                                           {/* <div className="card-photos">
                                             <Image.PreviewGroup>
@@ -550,8 +571,6 @@ export default function index({ data }) {
                     </StickyContainer>
                   </div>
                 </div>
-
-               
               </div>
             </div>
           </section>
@@ -575,7 +594,7 @@ export const getServerSideProps = async (context) => {
   } else {
     return {
       props: {
-        data:[]
+        data: [],
       },
     };
   }

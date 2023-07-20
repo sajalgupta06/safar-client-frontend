@@ -14,8 +14,8 @@ export default function Date({ ticketData, tripData, setTicketData,selectedRowKe
 
     {
       title: "Price",
-      dataIndex: "basePrice",
-      key: "finalPbasePricerice",
+      dataIndex: "amount",
+      key: "amount",
     },
     
     {
@@ -24,25 +24,26 @@ export default function Date({ ticketData, tripData, setTicketData,selectedRowKe
       key: "pickupPoint",
     },
     {
+      title: "Pickup Mode",
+      dataIndex: "pickupMode",
+      key: "pickupMode",
+    },
+    {
       title: "Drop Point",
       dataIndex: "dropPoint",
       key: "dropPoint",
     },
     {
-      title: "Mode",
-      dataIndex: "dropTransMode",
-      key: "dropTransMode",
-      textWrap: "wrap",
-
-      render: (element, record) => (
-        <>
-          {record.pickupTransMode} , {record.dropTransMode}
-        </>
-      ),
+      title: "Drop Mode",
+      dataIndex: "dropMode",
+      key: "dropMode",
+  
     },
 
     
   ];
+
+  
 
   const items = [
     ...tripData?.dates.map((ele, i) => {
@@ -50,8 +51,8 @@ export default function Date({ ticketData, tripData, setTicketData,selectedRowKe
         key: i,
         label: (
           <p>
-            {moment(ele.startDate).format("DD-MMM-YYYY")} to{" "}
-            {moment(ele.endDate).format("DD-MMM-YYYY")}
+            {moment(ele.startDate,"DD-MM-YYYY").format("DD-MMM-YYYY")} to{" "}
+            {moment(ele.endDate,"DD-MM-YYYY").format("DD-MMM-YYYY")}
           </p>
         ),
         onClick: () => {
@@ -109,7 +110,6 @@ export default function Date({ ticketData, tripData, setTicketData,selectedRowKe
 
       <div className="options">
         <Table
-          
           columns={columns}
           dataSource={tripData?.priceSlots}
           rowKey={(record) => record._id}

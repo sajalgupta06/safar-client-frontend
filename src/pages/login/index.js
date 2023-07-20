@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button } from "antd";
 import { PoweroffOutlined } from "@ant-design/icons";
 import { useRouter } from "next/router";
@@ -21,14 +21,14 @@ export default function Login() {
 
   // console.log(data)
  
-// useEffect(() => {
-//   console.log(data)
-//   if(data.isAuthenticated)
-//   {
-//     return navigate("/")
-//   }
+useEffect(() => {
+  console.log(data)
+  if(data?.isAuthenticated)
+  {
+    return navigate("/")
+  }
 
-// }, []);
+}, []);
 
   
 const sendOtp = async () => {
@@ -178,11 +178,10 @@ const sendOtp = async () => {
           </div>
           <div className="img-container">
             {/* <img src={loginImage}></img> */}
-            <Image
+            <img
               src={
                 "https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
               }
-             
             />
           </div>
         </div>

@@ -23,7 +23,7 @@ export default function index({
 }) {
   const router = useRouter();
 
-    const initialSort = {sort:filterValues.sort !=undefined? filterValues.sort:"popular",sortDirection:filterValues.sortDirection !=undefined? filterValues.sortDirection:-1}
+    const initialSort = {sort:filterValues?.sort !=undefined? filterValues?.sort:"popular",sortDirection:filterValues?.sortDirection !=undefined? filterValues?.sortDirection:-1}
 
   const [filterTags,setFiltersTags] = useState(filterValues);
   
@@ -43,6 +43,35 @@ export default function index({
 
   const { Search } = Input;
 
+
+
+
+  const handleFilterDataqueries = ()=>{
+    let filterData = { };
+
+    if(searchData){
+      filterData = {...filterData,search:searchData}
+    }
+
+    if(dayState[0]!=null){
+      filterData = {...filterData,minDays:dayState[0]}
+    }
+
+    if(dayState[1]!=null){
+      filterData = {...filterData,maxDays:dayState[1]}
+    }
+
+
+    if(priceState[0]!=null){
+      filterData = {...filterData,minPrice:priceState[0]}
+    }
+
+    if(priceState[1]!=null){
+      filterData = {...filterData,maxPrice:priceState[1]}
+    }
+return filterData;
+  }
+
   const handleApplyFilter = async () => {
 
     // if (dayState[0] > dayState[1] || priceState[0] > priceState[1]) {
@@ -51,23 +80,18 @@ export default function index({
     // }
 
 
-   
-
+  
     setFiltersTags({
       minDays: dayState[0],
       maxDays: dayState[1],
       minPrice: priceState[0],
       maxPrice: priceState[1],
     });
+  
+    const filterData =  handleFilterDataqueries()
 
-    const filterData = {
-      search:searchData,
-      minDays: dayState[0],
-      maxDays: dayState[1],
-      minPrice: priceState[0],
-      maxPrice: priceState[1]
-    };
 
+    console.log(filterData)
 
     const query = "?"+new URLSearchParams(filterData).toString()
 
@@ -77,13 +101,8 @@ export default function index({
 
   const closeTags = async () => {
 
-    const filterData = {
-      search:searchData,
-      minDays: dayState[0],
-      maxDays: dayState[1],
-      minPrice: priceState[0],
-      maxPrice: priceState[1]
-    };
+  
+    const filterData =  handleFilterDataqueries()
 
       const query = "?"+ new URLSearchParams(filterData).toString()
 
@@ -139,6 +158,8 @@ export default function index({
     }
     setLoading(false);
   }
+
+
 
 useEffect(() => {
   onRouteChange()
@@ -257,7 +278,7 @@ console.log(sort)},
     <>
       <section className="results section">
         <>
-          {data && (
+          {data && data.length>0 &&    (
             <div className="secContainer container">
               <div className="filtersDiv">
                 <p className="heading">Filters</p>
@@ -282,8 +303,8 @@ console.log(sort)},
                         name="minDays"
                         id="minDays"
                         value={dayState[0]}
-                        onChange={(e) => setDayState((state) => [e, state[1]])}
-                      ></InputNumber>
+                        onChange={(e) => {console.log(e);setDayState((state) => [e, state[1]])}}
+                      ></InputNumber> 
                     </Form.Item>
 
                     <Form.Item label="Max Days">
@@ -304,6 +325,7 @@ console.log(sort)},
                         placeholder="Min Price"
                         name="minPrice"
                         id="minPrice"
+                        style={{width:"100%"}}
                         value={priceState[0]}
                         addonBefore={<BiRupee />}
                         width={5}
@@ -472,7 +494,7 @@ console.log(sort)},
               )}
             </div>
           )}
-          {!data && <DataNotFound />}
+          {(!data || data?.length==0 ) && <DataNotFound />}
         </>
       </section>
     </>
@@ -513,3 +535,6 @@ const queryString =  "?"+new URLSearchParams(obj).toString()
     };
   }
 };
+
+
+
