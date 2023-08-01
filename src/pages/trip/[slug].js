@@ -343,8 +343,6 @@ export default function index({ data }) {
 
               <div className="secContainer-top-otherDetails">
                     <div className="box">
-                   
-                      
                           <div className="item">
                             <p className="title">Region</p>
                             <p className="value">{data?.region}</p>

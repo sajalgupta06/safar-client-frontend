@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { MyContext } from "@/pages/_app";
+import { MyContext } from "@/pages/_app"; 
 import Link from "next/link";
 import Image from "next/image";
 import { BiRupee } from "react-icons/bi";

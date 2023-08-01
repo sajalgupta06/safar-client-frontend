@@ -54,12 +54,12 @@ export default function index({data}) {
     }
   };
 
+
   const handlePrev = () => {
     if (tabs > 0) {
       setTabs(tabs - 1);
     }
   };
-
 
  
   const handleNext = () => {
@@ -202,6 +202,8 @@ export default function index({data}) {
               {tabs == 2 && "Preview"}
               {tabs == 3 && "Checkout"}
             </p> */}
+
+
           </div>
           <div className="purchase-container-middle">
             {tabs == 0 && <Date
@@ -215,7 +217,6 @@ export default function index({data}) {
               <Passengers
                 passengerState={passengerState}
                 setPassengerState={setPassengerState}
-    
                 ticketData = {ticketData}
                 setTicketData = {setTicketData}
               />
