@@ -7,11 +7,11 @@ import Image from "next/image";
 import { getOtp, verifyOtp } from "@/actions/req";
 import { alerts } from "@/utils/alert";
 import Cookies from 'js-cookie'
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
 
   const router = useRouter()
-
   const [phoneNumber, setPhoneNumber] = useState("");
   const [otp, setOtp] = useState("");
   const [buttonLoading, setButtonLoading] = useState(false);
@@ -20,15 +20,24 @@ export default function Login() {
     const data = useContext(MyContext)
 
   // console.log(data)
- 
+  // useEffect(() => {
+  
+  //   if(data?.isAuthenticated)
+  //   {
+  //     return window.location.replace("/")
+  //   }
+  
+  // }, []);
+  
 useEffect(() => {
-  console.log(data)
+
+ 
   if(data?.isAuthenticated)
   {
-    return navigate("/")
+    return window.location.replace("/")
   }
 
-}, []);
+}, [data?.isAuthenticated]);
 
   
 const sendOtp = async () => {

@@ -1,5 +1,4 @@
 import "@/styles/globals.scss";
-
 import '@/styles/Footer.scss'
 import '@/styles/Navbar.scss'
 import '@/styles/Loader.scss'
@@ -21,7 +20,7 @@ import '@/styles/Locations.scss'
 import '@/styles/Collections.scss'
 import { createContext, useEffect, useReducer, useState } from "react";
 import reducer from "@/components/reducer";
-import { fetchUser } from "@/actions/req";
+import { checkAuthentication, fetchUser } from "@/actions/req";
 import { Loader } from "@/components/Loader/Loader";
 import { ConfigProvider } from 'antd';
 import Layout from "@/components/Layout";
@@ -43,29 +42,31 @@ export default function App({ Component, pageProps }) {
 
 const handleAuthentication = async() =>{
 
- 
+
   try {
     setLoading(true)
-    const res = await fetchUser()
+    const res =  await fetchUser()
 
-
-    if(res.statusCode=="10000")
+    if(res.statusCode =="10000")
     {
       dispatch({
-      type: "SET_AUTHENTICATE",
-      payload: true,
-    });
+        type: "SET_AUTHENTICATE",
+        payload: true,
+      });
+
+   
   
     dispatch({ type: "SET_USER", payload:  res.data.user });
-  
+
     }
     else{
       dispatch({
         type: "SET_AUTHENTICATE",
         payload: false,
       });
+      localStorage.removeItem('')
     }
-
+    setLoading(false)
   } catch (error) {
       console.log(error)
   }
@@ -85,6 +86,10 @@ handleAuthentication()
   return (
     <>
     
+    {
+      loading==true?
+      <Loader/>
+      :
       <MyContext.Provider
       value={{
         isAuthenticated: data.isAuthenticated,
@@ -110,6 +115,8 @@ handleAuthentication()
       </ConfigProvider>
       </MyContext.Provider>
     
+    }
+   
    </>
   );
 }

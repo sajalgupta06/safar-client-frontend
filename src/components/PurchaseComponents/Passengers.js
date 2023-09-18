@@ -63,15 +63,15 @@ export default function Passengers(props) {
 
     {
       title: "Mobile Number",
-      dataIndex: "phone",
-      key: "phone",
+      dataIndex: "mobileNumber",
+      key: "mobileNumber",
       render: (ele)=> ele==""?"-":ele,
     },
 
     {
       title: "Aadhar Card  Number",
-      dataIndex: "adhr",
-      key: "adhr",
+      dataIndex: "aadharNumber",
+      key: "aadharNumber",
      
     },
 
@@ -103,7 +103,7 @@ export default function Passengers(props) {
       !passengerState?.name||
       !passengerState?.age||
         !gender||
-      !passengerState?.adhr 
+      !passengerState?.aadharNumber 
       )
       {
         alerts.info("Please fill the details")
@@ -163,7 +163,7 @@ const EditPassengers = (key)=>{
 
       setPassengerState({
                   ...passengerState,
-                  ["adhr"]: e.target.value
+                  ["aadharNumber"]: e.target.value
                 })
   }
 
@@ -272,11 +272,11 @@ const EditPassengers = (key)=>{
             placeholder="Mobile Number"
             type={"number"}
             autoComplete={false}
-            value={passengerState?.phone}
+            value={passengerState?.mobileNumber}
             onChange={(e) =>
               setPassengerState({
                 ...passengerState,
-                ["phone"]: e.target.value,
+                ["mobileNumber"]: e.target.value,
               })
             }
           />
@@ -325,7 +325,7 @@ const EditPassengers = (key)=>{
             <Input
               placeholder="Enter aadhar Card Number"
               type={"number"}
-              value={passengerState.adhr}
+              value={passengerState.aadharNumber}
               onChange={(e) => handleAdharCardChange(e)}
             />
           </Form.Item>

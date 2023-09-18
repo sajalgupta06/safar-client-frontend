@@ -61,12 +61,12 @@ export default function Preview({ticketData , tripData ,acceptTerms,setAcceptTer
 
    <div className='item' key= "2">
     <p className='label'>Start Date </p>
-    <p className='value'>{moment(ticketData?.trip?.date?.startDate).format("DD-MMM-YYYY")} </p>
+    <p className='value'>{moment(ticketData?.trip?.priceSlot?.date?.startDate,"DD-MM-YYYY").format("DD-MMM-YYYY")} </p>
    </div>
 
    <div className='item' key= "3">
     <p className='label'>End Date </p>
-    <p className='value'>{moment(ticketData?.trip?.date?.endDate).format("DD-MMM-YYYY")} </p>
+    <p className='value'>{moment(ticketData?.trip?.priceSlot?.date?.endDate,"DD-MM-YYYY").format("DD-MMM-YYYY")} </p>
    </div>
 
 
@@ -80,18 +80,19 @@ export default function Preview({ticketData , tripData ,acceptTerms,setAcceptTer
 
    <div className='item' key= "5">
     <p className='label'>Amount in (Rs.)</p>
-    <p className='value'>{new Intl.NumberFormat('en-IN').format(ticketData.trip.priceSlot.basePrice * ticketData.passengers.length)}</p>
+    {/* <p className='value'>{new Intl.NumberFormat('en-IN').format(ticketData.trip.priceSlot.basePrice * ticketData.passengers.length)}</p> */}
+    <p className='value'>{ticketData.trip.priceSlot.amount * ticketData.passengers.length}</p>
    </div>
 
 
    <div className='item' key= "6">
     <p className='label'>Pickup Location</p>
-    <p className='value'>{ticketData.trip?.priceSlot.pickupPoint} ({ticketData.trip?.priceSlot.pickupTransMode})</p>
+    <p className='value'>{ticketData.trip?.priceSlot.pickupPoint} ({ticketData.trip?.priceSlot.pickupMode})</p>
    </div>
 
    <div className='item' key= "6">
     <p className='label'>Drop Location</p>
-    <p className='value'>{ticketData.trip?.priceSlot.dropPoint} ({ticketData.trip?.priceSlot.dropTransMode})</p>
+    <p className='value'>{ticketData.trip?.priceSlot.dropPoint} ({ticketData.trip?.priceSlot.dropMode})</p>
    </div>
 
 

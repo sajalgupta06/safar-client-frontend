@@ -13,23 +13,25 @@ export default function Bookings() {
   useEffect(() => {
     handleFetchTickets();
   }, []);
+  console.log(ticketData)
 
   const columns = [
     {
       title: "Trip Name",
-      dataIndex: "trip",
-      key: "tripName",
+      dataIndex: "tripDetails",
+      key: "tripDetails",
       render:(ele)=>ele?.name
     },
 
     {
       title: "Trip Date",
-      dataIndex: "trip",
-      key: "tripDate",
-      render:(ele)=>moment(ele.date.starDate).format("DD-MMM-YYYY"), 
+      dataIndex: "tripDetails",
+      key: "tripDetails",
+      // render:(ele)=>moment(ele?.priceSlot?.date?.starDate).format("DD-MMM-YYYY"), 
+      render:(ele)=>ele.priceSlot.date.startDate, 
     },
 
- 
+
     {
       title: "No. Of Passengers",
       dataIndex: "passengers",

@@ -196,6 +196,9 @@ export const  fetchUser  =  async () => {
 
 };
 
+
+
+
 export const  updateUser  =  async (data) => {
   
   const formData = new FormData()
@@ -332,3 +335,16 @@ export const  fetchTickets=  async (data) => {
   return await getApi('/ticket',true)
 
 };
+
+
+// Payment
+
+export const getPaymentOrderId=  async(amount)=>{
+
+  return await postApi('/getpaymentorderid',{amount} , true)
+}
+
+export const verifyPayment=  async(data)=>{
+
+  return await postApi('/verifypayment',data , true)
+}

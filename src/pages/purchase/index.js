@@ -32,9 +32,9 @@ export default function index({data}) {
     name: "",
     age: "",
     email: "",
-    phone: "",
+    mobileNumber: "",
     gender:"",
-    adhr:""
+    aadharNumber:""
   });
 
   const [ticketData, setTicketData] = useState({
@@ -67,7 +67,7 @@ export default function index({data}) {
 
     if(tabs==0)
     {
-        if(!ticketData?.trip?.date || !ticketData?.trip?.priceSlot )
+        if(!ticketData?.trip?.priceSlot )
         {
           alerts.warning("Please fill all the details")
           return
