@@ -1,8 +1,10 @@
 
 
   .about{
-
+    padding-left: 0;
+    padding-right: 0;
     .secContainer{
+        
         .title{
             color:var(--blackcolour);
             line-height: 1.5rem;
@@ -13,6 +15,7 @@
         }
         .mainContent{
             gap:1rem;
+                padding: 0 1rem;
             .singleItem{
                 text-align: center;
                 img{
@@ -133,9 +136,10 @@
     @media screen and (min-width:1024px){
 
         .about{
+            width: 80%;
             .secContainer{
                 .mainContent{
-                    padding: 2.5rem 0;
+                    padding: 2.5rem 1rem;
                 }
             }
         }

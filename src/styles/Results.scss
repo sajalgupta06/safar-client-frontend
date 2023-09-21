@@ -4,16 +4,19 @@
 
     .secContainer{
         height: auto;
-        // background: grey;
+        background: var(--greyBg);
         display: flex;
         gap: 1rem;
         min-height: 80vh;
+        width: 100%!important;
         
         .filtersDiv{
             // background: red;
-            width: 25%;
+            width: 20%;
             height: auto;
-            box-shadow: var(--box-shadow);
+            // box-shadow: var(--box-shadow);
+            background: var(--whitecolour);
+
             border-radius: 1rem;
             padding: 1rem ;
             min-height: 80vh;
@@ -72,14 +75,17 @@
         .mainDiv{
             display: flex;
             flex-direction: column;
-            height: 100%;
-            width: 75%;
+            width: 80%;
+            background: var(--whitecolour);
+            border-radius: 1rem;
+            height: auto;
+            min-height: 80vh;
             gap: 1rem;
             .headDiv{
                 // background: green;
-                height: 10%;
-                box-shadow: var(--box-shadow);
-            border-radius: 1rem;
+                height: auto;
+                // box-shadow: var(--box-shadow);
+                border-radius: 1rem;
             padding: 1rem ;
             padding-bottom: 0.5rem;
                 .content{
@@ -190,6 +196,7 @@
             padding: 1rem 0.5rem;
             .mainContent{
                 gap:1rem;
+                grid-template-columns: repeat(5, 1fr)!important;
                 .singleOffer{
                     border-radius: 1rem;
                     overflow: hidden;
@@ -347,7 +354,7 @@
                       // display: flex;
                       // flex: 1 1 auto;
                       flex-direction: column;
-                      padding: 1rem;
+                      padding: 0.5rem;
                       line-height: 1.5em;
                       font-size: 1rem;
                       text-decoration: none;
@@ -382,12 +389,12 @@
                     }
             
                     .card-title {
-                      font-size: 1.2rem;
+                      font-size: 0.9rem;
                       line-height: 1.1em;
                       color: #000;
                       margin-bottom: 0.2em;
                       text-align: center;
-                      margin-top: 1rem;
+                    //   margin-top: 1rem;
                       font-weight: 600;
                     
             

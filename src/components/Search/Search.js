@@ -3,7 +3,7 @@ import homeBgImage from "../../static/images/homeBgImage.jpg"
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { useRouter } from "next/router";
-
+import bn6 from '../../static/images/bn6.jpg'
 
 const Search = () => {
 
@@ -46,7 +46,8 @@ const router = useRouter();
     <>
       <section className="search"
    style = {{
-    backgroundImage: `url(https://images.pexels.com/photos/872831/pexels-photo-872831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)`
+    // backgroundImage: `url(https://images.pexels.com/photos/872831/pexels-photo-872831.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)`
+    backgroundImage: `url(${bn6.src})`
    
 }}
       >

@@ -3,8 +3,8 @@ import {
   fetchSingleTripBySlug,
   removeFromFavourite,
 } from "@/actions/req";
-import React, { useContext, useState } from "react";
-import { IoIosArrowForward, IoIosShareAlt } from "react-icons/io";
+import React, { useContext, useRef, useState } from "react";
+import { IoIosArrowForward, IoIosShareAlt,IoIosArrowBack } from "react-icons/io";
 import { StickyContainer, Sticky } from "react-sticky";
 import { Tabs, Dropdown, Table, Rate, Row, Col } from "antd";
 import { ImCross } from "react-icons/im";
@@ -42,7 +42,7 @@ export default function index({ data }) {
   const [date, setDate] = useState(data?.dates[0]);
 
   const context = useContext(MyContext);
-
+const sliderButtonRef = useRef()
   const renderTabBar = (props, DefaultTabBar) => (
     <Sticky bottomOffset={80}>
       {({ style }) => (
@@ -258,10 +258,26 @@ export default function index({ data }) {
           <section className="trip section">
             <div className="secContainer">
               <div className="secContainer-top">
+              <div className="secContainer-top-buttons">
+                <IoIosArrowBack className="back"
+                 onClick={() => sliderButtonRef.current.prev()}
+/>
+                <IoIosArrowForward className="forward"
+                                 onClick={() => sliderButtonRef.current.next()}
+
+                />
+                </div>
                 <div className="secContainer-top-gallery">
-                  <Carousel>
+                  <Carousel
+                  dots={false}
+                  autoplay={true}
+                  ref={sliderButtonRef}
+                  touchMove={true}
+                  infinite={true}
+                  >
                     <div>
                       <Image
+                      preview={false}
                         className="sliderStyle"
                         src="https://images.unsplash.com/photo-1503424886307-b090341d25d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80"
                       />
@@ -269,6 +285,8 @@ export default function index({ data }) {
 
                     <div>
                       <Image
+                       preview={false}
+
                         className="sliderStyle"
                         src="https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
                       />
@@ -276,6 +294,8 @@ export default function index({ data }) {
 
                     <div>
                       <Image
+                       preview={false}
+
                         className="sliderStyle"
                         src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                       />
@@ -283,6 +303,7 @@ export default function index({ data }) {
 
                     <div>
                       <Image
+                      preview = {false}
                         className="sliderStyle"
                         src="https://images.unsplash.com/photo-1431631927486-6603c868ce5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
                       />

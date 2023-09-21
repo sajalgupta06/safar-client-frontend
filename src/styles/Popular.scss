@@ -11,7 +11,7 @@
 // }
 
 .popular {
-  padding-top: 5rem;
+  // padding-top: 5rem 2rem!important;
 
   .secContainer {
     .secHeader {
@@ -209,6 +209,7 @@
 @media screen and (max-width: 480px) {
 
   .popular{
+    padding-top: 10rem;
     .secContainer{
       .mainContent{
         .slick-slide{
@@ -238,6 +239,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        padding: 0 1rem;
         .textDiv {
           text-align: start;
           max-width: 70%;
@@ -259,11 +261,14 @@
 @media screen and (min-width: 1024px) {
   .popular {
     padding-top: 12rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 80%;
     .secContainer {
       .secHeader {
         .textDiv {
           .secTitle {
-            font-size: 2.2rem;
+            font-size: 1.5rem;
           }
           p {
             font-size: 15px;
@@ -276,3 +281,4 @@
     }
   }
 }
+

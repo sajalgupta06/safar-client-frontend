@@ -28,10 +28,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background: transparent;
+        // background: transparent;
+        background: var(--whitecolour);
         width: 100%;
         padding: 1rem;
         z-index: 1000;
+        height: 4rem;
         .head{
             color: var(--primarycolour);
             font-family: Arizonia;
@@ -40,6 +42,7 @@
         .loginItem{
            
             background: var(--primarycolour);
+            // background: var(--whitecolour);
             padding: 0.3rem 0.7rem!important;
             border-radius: 1rem;
             .navLink{
@@ -47,6 +50,18 @@
                 padding: 0.5rem;
             }
         }
+
+// .navbar{
+//     .navLists{
+//         .navItems{
+//             .navLink{
+//                 display: flex;
+//                 align-items: center;
+//             }
+//         }
+//     }
+// }
+
         @media screen and (max-width:768px) {
             .navBar{
                 background:var(--greyBg);
@@ -76,6 +91,7 @@
                             color: var(--textcolour);
                             font-size: .9rem;
                             font-weight: 600;
+                           
                             &:hover{
                                 color: var(--primarycolour);
 
@@ -133,6 +149,7 @@
         }
     }
 
+
     .activeHeader{
         background: var(--greyText);
         box-shadow: 0.2px 8px 2px rgba(178 ,178,178,0.45) ;
@@ -158,13 +175,24 @@
                     align-items: center;
                     justify-content: center;
                     flex-direction: row;
+                    gap: 0.5rem;
                         .navItems{
                             
                             .navLink{
-                                color: var(--primarycolour);
+                                // color: var(--primarycolour);
+                                color: black;
                                 padding: 0 .45rem;
-                                font-size: .9rem;
+                                font-size: 1rem;
                                 font-weight: 500;
+                                display: flex;
+                                align-items: center;
+                                gap: 0.3rem;
+                                svg{
+                                    font-size: 1.2rem;
+                                    &:hover{
+                                        color:var(--Hovercolour)
+                                    }
+                                }
                                     &:hover{
                                         color:var(--Hovercolour)
                                     }

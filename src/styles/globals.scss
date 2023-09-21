@@ -39,6 +39,11 @@ input::-webkit-inner-spin-button {
 //   right: 0!important;
 //   top: 0!important;
 // }
+
+body{
+  background-color: var(--greyBg);
+
+}
 a{
   text-decoration: none;
   &:hover{
@@ -53,11 +58,16 @@ p{
 }
 .section{
   padding: 5rem 0 2rem;
+  background-color: var(--greyBg);
+  padding-bottom: 0;
 }
 .container{
   // padding-left: 1.5rem;
   // padding-right: 1.5rem;
   padding: 1.5rem;
+  background-color: var(--whitecolour);
+  margin: auto;
+
 }
 .icon{
   font-size: 2rem;
@@ -172,11 +182,15 @@ input{
 @media screen and (min-width:1240px)
 {
   .container{
-    width: 75%!important;
+    width: 100%;
     margin: auto;
+    // padding: 2rem;
   }
   .section{
     padding: 5rem 0 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0rem;
   }
   .secIntro{
     margin:0 auto 3rem;
@@ -210,13 +224,13 @@ input{
   color: var(--whitecolour);
 }
 
-::-webkit-scrollbar{
-  width: 10px;
-  background: var(--greyBg);
-}
+// ::-webkit-scrollbar{
+//   width: 10px;
+//   background: var(--greyBg);
+// }
 
-::-webkit-scrollbar-thumb{
-  background: var(--primarycolour);
-  border-radius: 10px;
-  cursor: pointer;
-}
+// ::-webkit-scrollbar-thumb{
+//   background: var(--primarycolour);
+//   border-radius: 10px;
+//   cursor: pointer;
+// }

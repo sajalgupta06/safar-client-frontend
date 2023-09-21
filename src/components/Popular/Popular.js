@@ -22,7 +22,7 @@ const Popular = (props) => {
   const sliderRef = useRef();
 
   var settings = {
-    dots: true,
+
     infinite: false,
     speed: 500,
     slidesToShow: 4,
@@ -34,8 +34,7 @@ const Popular = (props) => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: true,
-          dots: true,
+        
         },
       },
       {
@@ -99,7 +98,7 @@ const Popular = (props) => {
           <div className="mainContent ">
             {/* <div className=""> */}
             <Slider {...settings} ref={sliderRef}>
-              {data?.map((trip, key) => {
+              { data && data?.map((trip, key) => {
                 return (
                   // <div className="singleDestination" key={key}>
                   //   <div className="destImage">

@@ -121,7 +121,7 @@
           // display: flex;
           // flex: 1 1 auto;
           flex-direction: column;
-          padding: 1rem;
+          // padding: 1rem;
           line-height: 1.5em;
 
           text-decoration: none;
@@ -195,7 +195,7 @@
         .card-image {
           // height: 80%!important;
           // height: 12rem;
-          height: 50%;
+          height: 70%;
           // overflow: hidden;
           // background-size: cover;
           // background-position: center;
@@ -250,9 +250,11 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        padding: 0 1rem;
         .textDiv {
           text-align: start;
           max-width: 70%;
+          font-size: 1rem;
         }
         .iconDiv {
           justify-content: flex-end;
@@ -270,12 +272,13 @@
 
 @media screen and (min-width: 1024px) {
   .locations {
+    width: 80%;
     padding-top: 3rem;
     .secContainer {
       .secHeader {
         .textDiv {
           .secTitle {
-            font-size: 2.2rem;
+            font-size: 1.5rem;
           }
           p {
             font-size: 15px;

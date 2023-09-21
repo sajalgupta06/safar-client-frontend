@@ -25,7 +25,7 @@ const Locations = (props) => {
   const sliderRef = useRef();
 
   var settings = {
-    dots: true,
+
     infinite: false,
     speed: 500,
     slidesToShow: 4,
@@ -37,8 +37,7 @@ const Locations = (props) => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: true,
-          dots: true,
+         
         },
       },
       {

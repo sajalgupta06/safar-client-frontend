@@ -26,7 +26,7 @@
               line-height: 1.5rem;
               padding-bottom: 0.5rem;
               align-items: center;
-              margin-bottom: 1rem;
+              // margin-bottom: 1rem;
             }
             p {
               font-size: 13px;
@@ -64,7 +64,7 @@
           gap: 1rem;
     
           .slick-slide {
-            padding: 1rem;
+            // padding: 1rem;
           }
       a{
       width: 100%;
@@ -146,26 +146,56 @@
           }
         }
         }
+        .tile{
+          height: auto;
+          // background-color: pink;
+          display: flex!important;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          margin-bottom: 1rem;
+            padding-top: 1rem;
+            // width: 30%;
+          img{
 
+            border-radius: 100%;
+            height: 10rem;
+            width: 10rem;
+            box-shadow: var(--box-shadow);
+            margin-bottom:1rem;
+
+          }
+          p{
+            text-align: center;
+            font-size: 1rem;
+            height: 1.5rem;
+          }
+        }
 
         .tiles{
-          display: flex;
-          gap: 1rem;
+          // display: flex;
+      
+          // flex-wrap: wrap;
+          // overflow: scroll;
+          // grid-template-columns: repeat(auto-fit, minmax(calc(100%/4), 1fr));
+          gap: 1.2rem;
           align-items: center;
-          overflow: scroll;
+          user-select: none;
           .tile{
-            height: 8rem;
+            height: auto;
             // background-color: pink;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             margin-bottom: 1rem;
+              padding-top: 1rem;
+              // width: 30%;
             img{
 
               border-radius: 100%;
-              height: 5rem;
-              width: 5rem;
+              height: 10rem;
+              width: 10rem;
               box-shadow: var(--box-shadow);
               margin-bottom: 5px;
 
@@ -184,22 +214,7 @@
     }
     
 
-    @media screen and (max-width: 500px) {
-      .collections {
-       .large{
 
-         display: none;
-       }
-    }
-  }
-  @media screen and (min-width: 500px) {
-    .collections {
-     .small{
-
-       display: none;
-     }
-  }
-}
     @media screen and (min-width: 480px) {
       .collections {
         // padding-top: 10rem;
@@ -214,6 +229,7 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
+            padding: 0 1rem;
             .textDiv {
               text-align: start;
               max-width: 70%;
@@ -231,15 +247,46 @@
         // padding-top: 10rem;
       }
     }
-    
+
+
+    @media screen and (max-width: 750px) {
+      .collections .secContainer .tile img {
+        height: 8rem;
+        width: 8rem;
+      }
+    }
+
+    @media screen and (max-width: 630px) {
+      .collections .secContainer .tile img {
+        height: 6rem;
+        width: 6rem;
+      }
+    }
+    @media screen and (max-width: 390px) {
+      .collections .secContainer .tile 
+      {
+        img {
+        height: 4rem;
+        width: 4rem;
+      }
+      p{
+        font-size: 0.8rem;
+      }
+    }
+    }
+
+
     @media screen and (min-width: 1024px) {
       .collections {
         // padding-top: 12rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        width: 80%;
         .secContainer {
           .secHeader {
             .textDiv {
               .secTitle {
-                font-size: 2.2rem;
+                font-size: 1.5rem;
               }
               p {
                 font-size: 15px;

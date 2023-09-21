@@ -16,6 +16,7 @@
     height: 70vh;
     // background: linear-gradient(rgba(33,33,33,0.522),rgba(33,33,33,0.522),url("https://images.pexels.com/photos/11150616/pexels-photo-11150616.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"));
     background-position: center;
+    // background-position: 20% 50%;
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -23,9 +24,10 @@
     justify-content: center;
     margin: auto;
     position: relative;
-
+    top:5rem;
 
 .secContainer{
+    background: transparent;
     .searchText{
         text-align: center;
         .title{
@@ -134,7 +136,7 @@
   .search{
     .secContainer{
         .searchCard{
-            bottom: -110px;
+            bottom: -42px;
             width: 90%;
             grid-template-columns: repeat(2,1fr);
             .btn{

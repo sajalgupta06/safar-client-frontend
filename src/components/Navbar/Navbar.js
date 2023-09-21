@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { AiFillCloseCircle } from "react-icons/ai";
+import { AiFillCloseCircle, AiOutlineHome, AiOutlineUser } from "react-icons/ai";
 import { TbGridDots } from "react-icons/tb";
 import { useRouter } from "next/router";
 import { Avatar, Button, Dropdown, Popover } from "antd";
@@ -8,6 +8,7 @@ import { MyContext } from "@/pages/_app";
 import Link from "next/link";
 import Cookies from "js-cookie";
 import { BiMenuAltRight } from "react-icons/bi";
+import { MdCardTravel } from "react-icons/md";
 
 const Navbar = () => {
   const [active, setActive] = useState("navBar");
@@ -67,13 +68,14 @@ const Navbar = () => {
 
   return (
     <section className="navBarSection">
-      <div className={transparent}>
+      {/* <div className={transparent}> */}
+      <div className="header">
         <h2 className="head">Safar</h2>
         <div className={active}>
           <ul className="navLists flex">
             <li className="navItems" onClick={removeNav}>
               <Link href="/" className="navLink">
-                Home
+                <AiOutlineHome/> Home
               </Link>
             </li>
 
@@ -83,15 +85,15 @@ const Navbar = () => {
               </Link>
             </li> */}
 
-            <li className="navItems" onClick={removeNav}>
-              <Link href="/#about" scroll={true} className="navLink">
-                About
+      <li className="navItems" onClick={removeNav}>
+              <Link href="#" className="navLink">
+                <MdCardTravel/> Become a Tour Operator
               </Link>
             </li>
             {data?.isAuthenticated == false && (
               <li className="navItems loginItem" onClick={removeNav}>
                 <Link href="/login" className="navLink">
-                  Login
+                 <AiOutlineUser/> Login
                 </Link>
               </li>
             )}

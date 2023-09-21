@@ -13,7 +13,29 @@
 
       box-sizing: border-box;
       margin-bottom: 3rem;
+      &-buttons{
+        position: relative;
+        top: 17rem;
+        z-index: 1;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 1rem;
+        font-size: 2rem;
+        
+    
+        .back{
+          cursor: pointer;
+        }
+        .forward{
+          cursor: pointer;
+
+        }
+      }
+
       &-gallery {
+
+
+
         .sliderStyle {
           height: 75vh;
           width: 100%;
@@ -584,6 +606,11 @@
   .trip {
     padding: 1rem;
     .secContainer {
+      &-top{
+        &-buttons{
+          top: 13rem;
+        }
+      }
       &-middle {
         &-left {
           padding: 0rem;
@@ -683,6 +710,9 @@
   .trip {
     .secContainer {
       &-top {
+        &-buttons{
+          top: 9rem;
+        }
         &-gallery {
           .slick-track {
             height: 13rem;
