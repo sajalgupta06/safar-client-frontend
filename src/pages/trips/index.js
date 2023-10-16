@@ -4,13 +4,14 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { AiFillFilter, AiOutlineClose } from "react-icons/ai";
 import {  BsSortDown, BsSortDownAlt } from "react-icons/bs";
-import homeBgImage from "../../static/images/homeBgImage.jpg";
 import Image from "next/image";
 import { BiRupee } from "react-icons/bi";
 import { CompLoader } from "@/components/Loader/CompLoader";
 import { alerts } from "@/utils/alert";
 import { useRouter } from "next/router";
 import placeHolderImage from '../../static/images/placeholder-image.png'
+import homeBgImage from "../../static/images/homeBgImage.jpg";
+
 import dynamic from "next/dynamic";
 
 const DataNotFound = dynamic(() => import('../../components/DataNotFound'))

@@ -4,7 +4,6 @@ import homeBgImage from "../../static/images/homeBgImage.jpg"
 import hiking from "../../static/images/hiking.jpg"
 import customerSupport from "../../static/images/customerSupport.jpg"
 import suitcase from "../../static/images/suitcase.jpg"
-import aboutVideo from '../../static/video/video.mp4'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import Image from 'next/image'
@@ -40,7 +39,7 @@ const About = () =>{
             </div>
 
 
-            <div className=' videoCard container' 
+            {/* <div className=' videoCard container' 
             
             
             >
@@ -58,12 +57,11 @@ const About = () =>{
             <div className='cardVideo'>
             <video src={aboutVideo} autoPlay loop muted 
             ></video>
-            {/* <ReactPlayer url={video} /> */}
 
             </div>
 
                 </div>
-            </div>
+            </div> */}
           
         </div>
        </section>

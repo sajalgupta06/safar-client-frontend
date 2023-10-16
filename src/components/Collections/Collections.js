@@ -105,41 +105,16 @@ const Collections = (props) => {
 
           <div className="mainContent  ">
             <Slider {...settings} ref={sliderRef}>
-         
-            <div className="tile">
-              <img src="https://images.pexels.com/photos/4109248/pexels-photo-4109248.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
-              <p>Bike Trip</p>
-            </div>
+            {data && data?.map((coll,i)=>{
+              return (
+                <Link key={i} href={`/collection/${coll.slug}`} className="tile">
+                <img src={coll.photo}></img>
+                <p>{coll.name}</p>
+              </Link>
+              )
+            })}
+           
 
-            <div className="tile">
-              <img src="https://images.pexels.com/photos/1365425/pexels-photo-1365425.jpeg?auto=compress&cs=tinysrgb&w=1600"></img>
-              <p>Trekking</p>
-            </div>
-
-            <div className="tile">
-              <img src="https://images.pexels.com/photos/5326943/pexels-photo-5326943.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
-              <p>Beach Trip</p>
-            </div>
-
-            <div className="tile">
-              <img src="https://images.pexels.com/photos/8969049/pexels-photo-8969049.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
-              <p>Mountains Trip</p>
-            </div>
-
-            <div className="tile">
-              <img src="https://images.pexels.com/photos/12955925/pexels-photo-12955925.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
-              <p>Family Trip</p>
-            </div>
-
-            <div className="tile">
-              <img src="https://images.pexels.com/photos/2870167/pexels-photo-2870167.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
-              <p>Weekend Trip</p>
-            </div>
-
-            <div className="tile">
-              <img src="https://images.pexels.com/photos/1583244/pexels-photo-1583244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"></img>
-              <p>Religious Trip</p>
-            </div>
          
             </Slider>
           </div>

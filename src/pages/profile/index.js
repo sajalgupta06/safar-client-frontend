@@ -82,7 +82,7 @@ export default function index() {
             {tabs=="Notifications" && <Notifications/>}
             {tabs=="Privacy Policy" && <Policy/>}
         </div>
-        <div className='profileContainer-right-bottom'></div>
+        {/* <div className='profileContainer-right-bottom'></div> */}
         </div>
     </div>
     

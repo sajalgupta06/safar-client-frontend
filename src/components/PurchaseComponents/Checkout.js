@@ -2,10 +2,9 @@ import { bookTrip, getPaymentOrderId, verifyPayment } from '@/actions/req'
 import { MyContext } from '@/pages/_app'
 import { alerts } from '@/utils/alert'
 import { Button, Input } from 'antd'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import useRazorpay from 'react-razorpay'
-import { useNavigate } from 'react-router-dom'
 
 export default function Checkout(props) {
 
@@ -16,7 +15,24 @@ export default function Checkout(props) {
 
   console.log(context)
 
-const handlePayment = async()=>{
+  // if (window.performance) {
+  //   if (performance.navigation.type == 1) {
+  //     console.log( "this page is reloaded" );
+  //   } 
+  // }
+  // window.onbeforeunload = function() {   
+  //   alert("Are you sure you want to navigate away?"); 
+  // }
+
+// useEffect(() => {
+//   // window.location.replace("/")
+//   console.log("YRessss")
+
+// }, [performance.navigation.TYPE_RELOAD,performance.navigation.TYPE_BACK_FORWARD]);
+
+
+
+ const handlePayment = async()=>{
 
 
   // setTicketData({
@@ -32,7 +48,7 @@ const handlePayment = async()=>{
 
   try {
 
-    let amount  = ticketData.trip.priceSlot.amount * ticketData.passengers.length
+    let amount  = ticketData?.trip?.priceSlot?.amount * ticketData?.passengers?.length || 100
     const  res = await getPaymentOrderId(amount)
     if (res.statusCode == "10000") 
     {
@@ -97,8 +113,18 @@ const initPayment=(data) => {
 
     } catch (error) {
       console.log(error)
+      
     }
   },
+
+  modal: {
+    escape:false,
+    ondismiss: function(){
+      window.location.replace("/")
+      alerts.error("Transaction failed")
+      return
+     }
+},
   theme: {
     color: "#3399cc",
   },
@@ -109,12 +135,17 @@ const rzp1 = new window.Razorpay(options)
 rzp1.open();
 
 }
-
+handlePayment()
 
   return (
    <>
-   <label htmlFor='amount'>Enter Amount</label>
+   {/* <label htmlFor='amount'>Enter Amount</label>
     <Button type='primary' onClick={handlePayment}>Pay {ticketData?.trip?.priceSlot?.amount * ticketData?.passengers?.length} </Button> 
+   */}
+   <p>
+
+   Please wait ..
+   </p>
   
    </>
   )

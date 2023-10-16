@@ -4,15 +4,17 @@
   padding-top: 5rem;
   .secContainer {
     // height: 100%;
+    background-color: var(--greyBg);
 
     &-top {
       // background-color: grey;
       width: 100%;
       // height: 400px;
       height: auto;
+      background-color: var(--greyBg);
 
       box-sizing: border-box;
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
       &-buttons{
         position: relative;
         top: 17rem;
@@ -52,17 +54,20 @@
 
       &-heading {
         width: 100%;
-        margin-top: 2rem;
+        // margin: 2rem 0;
+        margin-bottom: 2rem;
         // background: red;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 1rem;
         box-sizing: border-box;
-        border-radius: 1rem;
+        // border-radius: 1rem;
         // box-shadow: var(--box-shadow);
         background-color: white;
         flex-wrap: nowrap;
+        padding-bottom: 2rem;
+        padding-top: 0;
 
         &-right {
           .actionBox {
@@ -298,12 +303,14 @@
           // height: 8rem;
           width: 100%;
           border: 1px solid var(--primarycolour);
-          margin-bottom: 4rem;
+          // margin-bottom: 4rem;
           // display: flex;
           flex-wrap: wrap;
           padding: 2rem;
           gap: 1rem;
           border-radius: 1rem;
+          background: white;
+
           @media screen and (max-width: 900px) {
             
             display: grid;
@@ -376,6 +383,10 @@
         box-sizing: border-box;
         margin-bottom: 5rem;
         padding: 0 1rem;
+        background: white;
+    padding-bottom: 2rem;
+    border-radius: 1rem;
+
 
         &-tagBox {
           display: flex;
@@ -670,6 +681,9 @@
       padding-top: 4rem;
       &-top {
         margin-bottom: 1rem;
+        &-heading{
+          padding-top: 1rem;
+        }
         &-gallery {
           .slick-track {
             height: 22rem;

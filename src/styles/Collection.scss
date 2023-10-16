@@ -1,0 +1,316 @@
+.collection {
+  padding: 0 !important;
+
+  .banner {
+    height: 35rem !important;
+    width: 100%;
+    filter: blur(3px);
+  }
+  .textBox {
+    position: absolute;
+    top: 15rem;
+    width: 100%;
+
+    p {
+      font-size: 5rem;
+      color: var(--whitecolour);
+      font-weight: 500;
+      // font-family:"ubuntu";
+      text-align: center;
+      text-shadow: var(--text-shadow);
+      // width: 6rem;
+      letter-spacing: 2px;
+    }
+  }
+
+.tripsContainer{
+    display: flex;
+    justify-content: center;
+    .trips{
+        background-color: var(--whitecolour);
+        width: 85%;
+        min-height: 10rem;
+        height: auto;
+
+        .mainContent{
+          gap:1rem;
+          grid-template-columns: repeat(5, 1fr)!important;
+          .singleOffer{
+              border-radius: 1rem;
+              overflow: hidden;
+              padding: 0.5rem;
+              box-shadow: var(--box-shadow);
+              .icon{
+                  font-size: 20px;
+                  color:var(--textcolour);
+              }
+              small{
+                  font-weight: 500;
+                  color:var(--textcolour);
+              }
+              .destImage{
+                  position: relative;
+                  height: 200px;
+                  width: 100%;
+                  border-radius: 1rem;
+                  overflow: hidden;
+                  img{
+                          height: 100%;
+                          object-fit: cover;
+
+                  }
+
+                  .discount{
+                      position: absolute;
+                      top:10px;
+                      right:10px;
+                      padding:5px 10px;
+                      background-color:  var(--primarycolour);
+                      color:var(--whitecolour);
+                      border-radius: 3rem;
+                      font-size: 10px;
+                      font-weight: 500;
+
+                  }
+
+              }
+              .offerBody{
+                  padding:1rem;
+                  .price{
+                      justify-content: space-between;
+
+                      h4{
+                          color:var(--blackcolour);
+                          font-weight: 700;
+                          font-size: 1.1rem;
+
+                      }
+
+                      .status{
+                          padding:5px 10px;
+                          color:var(--Hovercolour);
+                          background: var(--greyBg);
+                          font-size: 10px;
+                          font-weight: 600;
+                          border-radius: 3rem;
+
+                      }
+                  }
+                  .amenities{
+                      width: 100%;
+                      flex-wrap: wrap;
+                      justify-content: flex-start;
+                      padding: 1rem 0;
+                      gap:0.5rem;
+
+                      .singleAmenity{
+                          padding:5px 10px;
+                          border-radius: 5px;
+                          background: var(--greyBg);
+                          gap: 0.5em;
+                      }
+                      
+                  }
+
+                  .btn{
+                      margin-top: 1rem;
+                      width: 100%;
+                      text-align: center;
+                      justify-content: center;
+                      padding: 0.6rem;
+                      color: var(--whitecolour);
+                      font-weight: 600;
+                      gap:0.5rem;
+                      .icon{
+                          color: var(--whitecolour);
+                      }
+
+                  }
+
+              }
+             
+              &:hover{
+                  transform: translateY(-7px);
+              }
+
+
+          }
+          .cards {
+              display: flex;
+              padding: 1rem;
+              // padding: 10px;
+              margin-bottom: 5px;
+              // width: 300px;
+              width: 100%;
+              // height: 330px;
+              height: auto;
+              border-radius: 1rem;
+              // width: 100%;
+      
+              // @media (max-width: 860px) {
+              //   // width: 33%;
+              //   zoom: 0.8 ;
+                
+              // }
+      
+      
+              // @media (max-width: 450px) {
+              //   // width: 50%;
+              //   // zoom: 0.8;
+              // }
+              // @media (max-width: 450px) {
+              //   // width: 33%;
+              //   zoom: 0.5;
+              // }
+      
+            
+              .card-item {
+                height: 100%;
+      
+                // display: flex;
+                flex-direction: column;
+                background-color: #fff;
+                width: 100%;
+                border-radius: 6px;
+                box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+                // overflow: hidden;
+                transition: transform 0.5s;
+                -webkit-transition: transform 0.5s;
+      
+                &:hover {
+                  cursor: pointer;
+                  transform: scale(1.1);
+                  -webkit-transform: scale(1.1);
+                  .card-image {
+                    opacity: 1;
+                  }
+                }
+              }
+      
+              // Content
+              .card-info {
+                // display: flex;
+                // flex: 1 1 auto;
+                flex-direction: column;
+                padding: 0.5rem;
+                line-height: 1.5em;
+                font-size: 1rem;
+                text-decoration: none;
+      
+                .card-intro{
+                  text-align: center;
+                  font-size: 0.7rem;
+                  margin-top: 3px;
+                  text-transform: capitalize;
+                  @media screen and (max-width: 480px) {
+                    font-size: 12px;
+                    line-height: 13px;
+                  }
+      
+                  span{
+                   .icon{
+                    position: relative;
+                    top: 2px;
+                    font-size: 0.7rem;
+                    right: -3px;
+                   }
+                    
+                    font-weight: 900;
+                  }
+                }
+      
+                @media screen and (max-width: 480px) {
+                  padding: 1rem 0.5rem;
+                } 
+      
+      
+              }
+      
+              .card-title {
+                font-size: 0.9rem;
+                line-height: 1.1em;
+                color: #000;
+                margin-bottom: 0.2em;
+                text-align: center;
+              //   margin-top: 1rem;
+                font-weight: 600;
+              
+      
+                @media screen and (max-width: 480px) {
+                  font-size: 1rem;
+                  margin-top: 0px;
+                  height: 25px;
+                  margin-bottom: 0px;
+      
+                }
+      
+      
+      
+              }
+      
+              // Images
+              .card-image {
+                // height: 80%!important;
+                // height: 12rem;
+                height: 50%;
+                // overflow: hidden;
+                // background-size: cover;
+                // background-position: center;
+                // background-repeat: no-repeat;
+                border-radius: 6px 6px 0px 0px;
+                opacity: 0.91;
+                width: 100%;
+                img {
+                  height: 100%;
+                }
+              }
+            } 
+            
+      }
+
+    }
+}
+
+}
+
+@media screen and (max-width: 950px) {
+  .collection {
+    .banner {
+      height: 30rem !important;
+    }
+    .textBox {
+      top: 15rem;
+      p {
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .collection {
+    .banner {
+      height: 22rem !important;
+    }
+    .textBox {
+      top: 10rem;
+      p {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .collection {
+    .banner {
+      height: 18rem !important;
+    }
+    .textBox {
+      top: 8rem;
+      p {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}

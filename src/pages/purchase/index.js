@@ -19,7 +19,7 @@ export default function index({data}) {
  
   const router = useRouter();
 
-  const [tabs, setTabs] = useState(0);
+  const [tabs, setTabs] = useState(3);
 
   const [acceptTerms , setAcceptTerms] = useState(false)
 
@@ -107,6 +107,7 @@ export default function index({data}) {
         if(!acceptTerms)
         {
           alerts.info("Please Accept Terms and Conditions")
+
           return
         }
 
@@ -114,7 +115,7 @@ export default function index({data}) {
 
     if(tabs==3)
     {
-      handleBookTicket()        
+          
     }
     
 
@@ -125,7 +126,7 @@ export default function index({data}) {
   };
 
 
-  const handleBookTicket = async()=>{
+  const   handleBookTicket = async()=>{
 
     try {
       

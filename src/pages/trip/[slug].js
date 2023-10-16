@@ -360,9 +360,7 @@ const sliderButtonRef = useRef()
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="secContainer-top-otherDetails">
+                <div className="secContainer-top-otherDetails">
                     <div className="box">
                           <div className="item">
                             <p className="title">Region</p>
@@ -397,6 +395,9 @@ const sliderButtonRef = useRef()
 
                     {/* <p>{data?.about}</p> */}
                   </div>
+              </div>
+
+              
                   
               <div className="secContainer-middle">
      

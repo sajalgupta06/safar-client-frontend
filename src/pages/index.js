@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import dynamic from 'next/dynamic'
 import { FloatButton } from "antd";
-import { fetchPopularTrips } from "@/actions/req";
+import { fetchAllCollections, fetchPopularTrips } from "@/actions/req";
 import { MyContext } from "./_app";
 import Banner from "@/components/Banner/Banner";
 import banner1 from '../static/images/banner1.jpg'
@@ -19,7 +19,7 @@ const PhotoGallery = dynamic(() => import('@/components/PhotoGallery/PhotoGaller
 
 
 
-export default function Index({ popularData }) {
+export default function Index({ popularData,collections }) {
   const context = useContext(MyContext);
 
 
@@ -28,7 +28,7 @@ export default function Index({ popularData }) {
     <>
       <Search />
       <Popular data={popularData} />
-      <Collections/>
+      <Collections data = {collections}/>
       <Banner image = {banner1}/>
       {/* <Offer data={popularData} /> */}
       <Locations/>
@@ -46,17 +46,20 @@ export default function Index({ popularData }) {
 
 export const getServerSideProps = async (context) => {
   const res = await fetchPopularTrips();
+  const collections = await fetchAllCollections();
 
-  if (res.statusCode == "10000") {
+  if (res.statusCode == "10000" || collections.statusCode == "10000") {
     return {
       props: {
         popularData: res.data.trips,
+        collections: collections.data
       },
     };
   } else {
     return {
       props: {
         popularData: [],
+        collections:[]
       },
     };
   }
