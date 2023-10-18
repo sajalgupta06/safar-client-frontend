@@ -6,7 +6,7 @@
     .secContainer{
         
         .title{
-            color:var(--blackcolour);
+            color:var(--blackcolor);
             line-height: 1.5rem;
             padding-bottom: 0.5rem;
             text-align: center;
@@ -32,14 +32,14 @@
                 }
                 h3{
                     font-weight: 700;
-                    color:var(--blackcolour);
+                    color:var(--blackcolor);
                     padding:0.5rem;
                 }
                 p{
                     font-size: 13px;
                     font-weight: 500;
                     padding-bottom:0.5rem;
-                    color: var(--textcolour);
+                    color: var(--textcolor);
 
                 }
             }
@@ -64,13 +64,13 @@
 
             .cardText{
                 h2{
-                    color: var(--whitecolour);
+                    color: var(--whitecolor);
                     font-weight: 600;
                     padding-bottom: 1rem;
                 }
 
                 p{
-                    color: var(--whitecolour);
+                    color: var(--whitecolor);
                     opacity: 0.7;
                     font-size: 12px;
                     font-weight: 400;
@@ -81,7 +81,7 @@
 
         .cardVideo{
 
-            border: 2px solid var(--whitecolour);
+            border: 2px solid var(--whitecolor);
             height: 300px;
             width: 100%;
             border-radius: 10px;

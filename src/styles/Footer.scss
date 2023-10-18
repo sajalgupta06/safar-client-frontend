@@ -10,7 +10,7 @@
         .footerLogo{
             padding-bottom: 0.5rem;
             .logo{
-                color:var(--blackcolour);
+                color:var(--blackcolor);
                 font-weight: 500;
                 cursor: pointer;
                 align-items: center;
@@ -18,7 +18,7 @@
 
                 .icon{
                     font-size: 25px;
-                    color:var(--primarycolour);
+                    color:var(--primarycolor);
                     margin-right: 0.5rem;
                 }
 
@@ -35,12 +35,12 @@
                 justify-content: center;
                 .icon{
                     font-size: 30px;
-                    background: var(--primarycolour);
+                    background: var(--primarycolor);
                     border-radius: 50% ;
                     padding:8px;
-                    color: var(--whitecolour);
+                    color: var(--whitecolor);
                     &:hover{
-                        background: var(--blackcolour);
+                        background: var(--blackcolor);
                     }
                 }
         }
@@ -49,7 +49,7 @@
             row-gap: 0.2rem;
             .linkTitle{
                 padding-bottom: 0.5rem;
-                color: var(--blackcolour);
+                color: var(--blackcolor);
                 font-weight: 700;
                 
             }
@@ -58,12 +58,12 @@
                 &:hover{
                     transform: translateX(10px);
                     a{
-                        color:var(--primarycolour);
+                        color:var(--primarycolor);
                     }
                 }
             }
             a, .phone , .email{
-                color:var(--textcolour);
+                color:var(--textcolor);
                 font-size: 13px;
                 font-weight: 500;
             }

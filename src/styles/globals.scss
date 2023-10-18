@@ -19,17 +19,17 @@ input::-webkit-inner-spin-button {
 }
 
 :root{
-  --primarycolour : hsl(26,93%,50%);
-  --redcolour : #ff4343;
-  --Hovercolour: hsl(26,90%,42%);
-  --whitecolour:hsl(0,0%,100%);
+  --primarycolor : hsl(26,93%,50%);
+  --redcolor : #ff4343;
+  --Hovercolor: hsl(26,90%,42%);
+  --whitecolor:hsl(0,0%,100%);
   --greencolor:green;
-  --blackcolour:hsl(0,0%,18%);
-  --textcolour:hsl(240,1%,48%);
-  --whitecolourDeam:hsl(0,0%,93%);
+  --blackcolor:hsl(0,0%,18%);
+  --textcolor:hsl(240,1%,48%);
+  --whitecolorDeam:hsl(0,0%,93%);
   --greyBg:hsl(0,0%,96%);
   --greyText:rgb(190,190,190);
-  --inputcolour:hsl(330,12%,97%);
+  --inputcolor:hsl(330,12%,97%);
   --box-shadow: 0 2px 8px 2px rgba(178 ,178,178,0.45) ;
   --text-shadow: 0 0 27px #000, 0 0 70px #000;  
 
@@ -56,7 +56,7 @@ li{
   list-style: none;
 }
 p{
-  color: var(--textcolour);
+  color: var(--textcolor);
 }
 .section{
   padding: 5rem 0 2rem;
@@ -67,7 +67,7 @@ p{
   // padding-left: 1.5rem;
   // padding-right: 1.5rem;
   padding: 1.5rem;
-  background-color: var(--whitecolour);
+  background-color: var(--whitecolor);
   margin: auto;
 
 }
@@ -86,7 +86,7 @@ p{
 }
 .btn{
   padding: .4rem 1.5rem;
-  background : var(--primarycolour);
+  background : var(--primarycolor);
   border: none;
   outline: none;
   border-radius: 3rem;
@@ -95,14 +95,14 @@ p{
   cursor: pointer;
 }
 .btn:hover{
-    background: var(--Hovercolour);
+    background: var(--Hovercolor);
 }
 .btn a{
-  color: var(--whitecolour);
+  color: var(--whitecolor);
   font-weight: 500;
 }
 .btn:hover a{
-  color: var(--whitecolour);
+  color: var(--whitecolor);
 }
 .secIntro{
   max-width: 70%;
@@ -110,13 +110,13 @@ p{
   margin:0 auto 2rem  ;
 }
 .secIntro .secTitle{
-  color:var(--blackcolour);
+  color:var(--blackcolor);
   line-height: 1.5rem;
   padding-bottom: 0.5rem;
 }
 .secIntro p{
   font-size: 13px;
-  color: var(--textcolour);
+  color: var(--textcolor);
   font-weight: 500;
 }
 img,video{
@@ -136,8 +136,8 @@ input{
   cursor: pointer;
 
   &:focus:checked{
-    color: var(--primarycolour);
-    background: var(--primarycolour);
+    color: var(--primarycolor);
+    background: var(--primarycolor);
     
   }
 }
@@ -153,7 +153,7 @@ input{
 
 
 .slick-track{
-  margin-bottom: 2rem;
+  // margin-bottom: 2rem;
 }
 .slick-list{
   background-color: white!important;
@@ -222,8 +222,8 @@ input{
 /* Page Design */
 
 ::selection{
-  background: var(--primarycolour);
-  color: var(--whitecolour);
+  background: var(--primarycolor);
+  color: var(--whitecolor);
 }
 
 // ::-webkit-scrollbar{
@@ -232,7 +232,7 @@ input{
 // }
 
 // ::-webkit-scrollbar-thumb{
-//   background: var(--primarycolour);
+//   background: var(--primarycolor);
 //   border-radius: 10px;
 //   cursor: pointer;
 // }

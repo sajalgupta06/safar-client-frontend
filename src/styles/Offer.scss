@@ -1,13 +1,13 @@
 // :root{
-//     --primarycolour : hsl(26,93%,50%);
-//     --Hovercolour: hsl(26,90%,42%);
-//     --whitecolour:hsl(0,0%,100%);
-//     --blackcolour:hsl(0,0%,18%);
-//     --textcolour:hsl(240,1%,48%);
-//     --whitecolourDeam:hsl(0,0%,93%);
+//     --primarycolor : hsl(26,93%,50%);
+//     --Hovercolor: hsl(26,90%,42%);
+//     --whitecolor:hsl(0,0%,100%);
+//     --blackcolor:hsl(0,0%,18%);
+//     --textcolor:hsl(240,1%,48%);
+//     --whitecolorDeam:hsl(0,0%,93%);
 //     --greyBg:hsl(0,0%,96%);
 //     --greyText:rgb(190,190,190);
-//     --inputcolour:hsl(330,12%,97%);
+//     --inputcolor:hsl(330,12%,97%);
 //     --box-shadow: 0 2px 8px 2px rgba(178 ,178,178,0.45) ;
 //   }
 
@@ -23,11 +23,11 @@
                 box-shadow: var(--box-shadow);
                 .icon{
                     font-size: 20px;
-                    color:var(--textcolour);
+                    color:var(--textcolor);
                 }
                 small{
                     font-weight: 500;
-                    color:var(--textcolour);
+                    color:var(--textcolor);
                 }
                 .destImage{
                     position: relative;
@@ -46,8 +46,8 @@
                         top:10px;
                         right:10px;
                         padding:5px 10px;
-                        background-color:  var(--primarycolour);
-                        color:var(--whitecolour);
+                        background-color:  var(--primarycolor);
+                        color:var(--whitecolor);
                         border-radius: 3rem;
                         font-size: 10px;
                         font-weight: 500;
@@ -61,7 +61,7 @@
                         justify-content: space-between;
 
                         h4{
-                            color:var(--blackcolour);
+                            color:var(--blackcolor);
                             font-weight: 700;
                             font-size: 1.1rem;
 
@@ -69,7 +69,7 @@
 
                         .status{
                             padding:5px 10px;
-                            color:var(--Hovercolour);
+                            color:var(--Hovercolor);
                             background: var(--greyBg);
                             font-size: 10px;
                             font-weight: 600;
@@ -99,11 +99,11 @@
                         text-align: center;
                         justify-content: center;
                         padding: 0.6rem;
-                        color: var(--whitecolour);
+                        color: var(--whitecolor);
                         font-weight: 600;
                         gap:0.5rem;
                         .icon{
-                            color: var(--whitecolour);
+                            color: var(--whitecolor);
                         }
 
                     }
@@ -138,7 +138,7 @@
     bottom: 5rem;
     padding: 0 7px;
     h2 {
-      color: var(--primarycolour);
+      color: var(--primarycolor);
       font-size: 1.2rem;
       margin-top: 0;
     //   margin-bottom: 10px;
@@ -204,7 +204,7 @@
 }
 
 .card-price {
-  color: var(--primarycolour);
+  color: var(--primarycolor);
   font-weight: bold;
 //   margin-right: 10px;
 font-size: 1.5rem;
@@ -229,13 +229,13 @@ display: flex;
 }
 
 .card-rating-icon {
-  color: var(--primarycolour);
+  color: var(--primarycolor);
   font-size: 1rem;
   margin-right: 5px;
 }
 
 .card-rating-number {
-  color: var(--primarycolour);
+  color: var(--primarycolor);
   font-size: 0.7rem;
   font-weight: bold;
   margin-right: 5px;

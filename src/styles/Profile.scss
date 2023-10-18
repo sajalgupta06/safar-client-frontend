@@ -19,7 +19,7 @@
             padding: 0.5rem;
             
             &-left{
-              background-color: var(--whitecolour);
+              background-color: var(--whitecolor);
                 box-shadow: var(--box-shadow);
                 width: 20%;
                 display: flex;
@@ -31,7 +31,7 @@
                     justify-content: center;
                     align-items: center;
                     .avatar{
-                        background-color: var(--primarycolour);
+                        background-color: var(--primarycolor);
                     }
 
                 }
@@ -52,7 +52,7 @@
                             
                     }
                     .active{
-                        background-color: var(--primarycolour);
+                        background-color: var(--primarycolor);
                         color: white;
                     }
                    }
@@ -61,7 +61,7 @@
             }
 
             &-right{
-              background-color: var(--whitecolour);
+              background-color: var(--whitecolor);
                 box-shadow: var(--box-shadow);
                 width: 80%;
                 height: auto;
@@ -115,7 +115,7 @@
                               .name {
                                 font-size: 1rem;
                                 font-weight: 600;
-                                color: var(--blackcolour);
+                                color: var(--blackcolor);
                                 position: relative;
                                 width: max-content;
                                 margin-bottom: 0.7rem;
@@ -130,7 +130,7 @@
                                 // &::after {
                                 //   content: "";
                                 //   position: absolute;
-                                //   background: var(--primarycolour);
+                                //   background: var(--primarycolor);
                                 //   top: 45%;
                                 //   right: -150%;
                                 //   height: 5px;
@@ -146,21 +146,21 @@
                                   right: 10px;
                                   bottom: 10px;
                                   padding: 0.5rem;
-                                  background: var(--primarycolour);
+                                  background: var(--primarycolor);
                                   font-size: 2.3rem;
                                   border-radius: 50%;
-                                  color: var(--whitecolour);
+                                  color: var(--whitecolor);
                                   border: 1px solid transparent;
                                   transition: 0.3s ease;
                     
                                   &:hover {
-                                    background: var(--blackcolour);
-                                    border: 1px solid var(--primarycolour);
-                                    color: var(--primarycolour);
+                                    background: var(--blackcolor);
+                                    border: 1px solid var(--primarycolor);
+                                    color: var(--primarycolor);
                                   }
                                 }
                                 h6 {
-                                  color: var(--blackcolour);
+                                  color: var(--blackcolor);
                                   font-weight: 500;
                                   font-size: 15px;
                                 }
@@ -171,7 +171,7 @@
                                   transform: translateY(5px);
                     
                                   .icon {
-                                    color: var(--primarycolour);
+                                    color: var(--primarycolor);
                                   }
                                 }
                               }

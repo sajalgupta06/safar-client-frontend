@@ -270,10 +270,10 @@ const sliderButtonRef = useRef()
                 <div className="secContainer-top-gallery">
                   <Carousel
                   dots={false}
-                  autoplay={true}
+                  autoplay={false}
                   ref={sliderButtonRef}
                   touchMove={true}
-                  infinite={true}
+                  infinite={false}
                   >
                     <div>
                       <Image

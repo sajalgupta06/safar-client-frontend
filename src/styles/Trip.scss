@@ -1,7 +1,8 @@
 .trip {
   height: auto;
-  padding: 3rem;
-  padding-top: 5rem;
+  padding-left: 0!important;
+  padding-right: 0!important;
+  padding-top: 2rem;
   .secContainer {
     // height: 100%;
     background-color: var(--greyBg);
@@ -75,7 +76,7 @@
             align-items: center;
             gap: 1rem;
             .icon {
-              color: var(--primarycolour);
+              color: var(--primarycolor);
               cursor: pointer;
               height: 2rem;
               width: 2rem;
@@ -284,25 +285,26 @@
               height: 2.1rem;
               width: 2.1rem;
               fill: var(--greyText);
-              background-color: var(--whitecolour);
+              background-color: var(--whitecolor);
               padding: 0.3rem;
               border-radius: 100%;
             }
             .selected {
-              fill: var(--redcolour);
+              fill: var(--redcolor);
             }
           }
         }
       }
 
       &-otherDetails {
+        padding: 0 0.5rem;
         .box {
           display: flex;
           justify-content: space-between;
           width: 100%;
           // height: 8rem;
           width: 100%;
-          border: 1px solid var(--primarycolour);
+          border: 1px solid var(--primarycolor);
           // margin-bottom: 4rem;
           // display: flex;
           flex-wrap: wrap;
@@ -337,7 +339,7 @@
               }
             }
             .value {
-              color: var(--primarycolour);
+              color: var(--primarycolor);
               font-size: 1.2rem;
 
               @media screen and (max-width: 900px) {
@@ -372,6 +374,7 @@
       }
     }
     &-middle {
+      padding: 0 0.5rem;
       display: flex;
       gap: 1rem;
       width: 100%;
@@ -422,7 +425,7 @@
             .icon {
               margin-right: 0.5rem;
               height: 1.5rem;
-              fill: var(--primarycolour);
+              fill: var(--primarycolor);
             }
             .tick {
               fill: green;
@@ -440,10 +443,10 @@
               align-items: center;
               display: flex;
               text-transform: capitalize;
-              color: var(--textcolour);
+              color: var(--textcolor);
               .icon {
                 font-size: 1rem;
-                color: var(--primarycolour);
+                color: var(--primarycolor);
                 font-weight: 500;
                 margin-right: 2px;
               }
@@ -468,7 +471,7 @@
             margin-bottom: 1rem;
           }
           p {
-            color: var(--textcolour);
+            color: var(--textcolor);
             line-height: 1.5rem;
           }
         }
@@ -494,7 +497,7 @@
 
               &-time {
                 display: inline;
-                color: var(--primarycolour);
+                color: var(--primarycolor);
                 font-size: 1rem;
               }
               &-about {
@@ -524,7 +527,7 @@
 
         &-heading {
           width: 100%;
-          border: 1px solid var(--primarycolour);
+          border: 1px solid var(--primarycolor);
           // background: red;
           display: flex;
           justify-content: space-between;
@@ -543,7 +546,7 @@
             font-size: 1.2rem;
             display: inline;
             .icon {
-              fill: var(--primarycolour);
+              fill: var(--primarycolor);
               height: 1rem;
               width: 1rem;
             }
@@ -579,7 +582,7 @@
             .price {
               font-size: 1rem;
               span {
-                color: var(--primarycolour);
+                color: var(--primarycolor);
                 font-weight: 600;
                 font-size: 1.2rem;
               }
@@ -613,23 +616,8 @@
     }
   }
 }
-@media screen and (max-width: 550px) {
-  .trip {
-    padding: 1rem;
-    .secContainer {
-      &-top{
-        &-buttons{
-          top: 13rem;
-        }
-      }
-      &-middle {
-        &-left {
-          padding: 0rem;
-        }
-      }
-    }
-  }
-}
+
+
 
 @media screen and (max-width: 700px) {
   .trip {
@@ -661,26 +649,15 @@
   }
 }
 
-@media screen and (max-width: 700px) {
-  .trip {
-    .secContainer {
-      &-top {
-        &-gallery {
-          .slick-track {
-            height: 35rem;
-          }
-        }
-      }
-    }
-  }
-}
 
 @media screen and (max-width: 550px) {
   .trip {
     .secContainer {
-      padding-top: 4rem;
       &-top {
         margin-bottom: 1rem;
+        &-buttons{
+          top: 13rem;
+        }
         &-heading{
           padding-top: 1rem;
         }
@@ -688,6 +665,11 @@
           .slick-track {
             height: 22rem;
           }
+        }
+      }
+      &-middle {
+        &-left {
+          padding: 0rem;
         }
       }
     }

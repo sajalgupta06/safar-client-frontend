@@ -14,7 +14,7 @@
     p{
         cursor: pointer;
         user-select: none;
-        color: var(--primarycolour);
+        color: var(--primarycolor);
     }
     hr{
         background-color: var(--greyText);
@@ -28,20 +28,20 @@
         align-items: center;
         justify-content: space-between;
         // background: transparent;
-        background: var(--whitecolour);
+        background: var(--whitecolor);
         width: 100%;
         padding: 1rem;
         z-index: 1000;
         height: 4rem;
         .head{
-            color: var(--primarycolour);
+            color: var(--primarycolor);
             font-family: Arizonia;
             font-size: 2.5rem;
         }
         .loginItem{
            
-            background: var(--primarycolour);
-            // background: var(--whitecolour);
+            background: var(--primarycolor);
+            // background: var(--whitecolor);
             padding: 0.3rem 0.7rem!important;
             border-radius: 1rem;
             .navLink{
@@ -87,12 +87,12 @@
                         padding: 1rem 0;
                        
                         .navLink{
-                            color: var(--textcolour);
+                            color: var(--textcolor);
                             font-size: .9rem;
                             font-weight: 600;
                            
                             &:hover{
-                                color: var(--primarycolour);
+                                color: var(--primarycolor);
 
                             }
                         }
@@ -109,18 +109,18 @@
                         a{
                             font-weight: 600;
                             &:hover{
-                                color: var(--whitecolour);
+                                color: var(--whitecolor);
                             }
                         }
                     }
                     .loginBtn{
                         background:none;
-                        border:1px solid var(--primarycolour);
+                        border:1px solid var(--primarycolor);
                       
                         &:hover{
-                            background: var(--Hovercolour) ;
+                            background: var(--Hovercolor) ;
                             a{
-                                color: var(--whitecolour);
+                                color: var(--whitecolor);
                             }
                         }
                     }
@@ -131,9 +131,9 @@
                     position: absolute;
                     top:1rem;
                     right: 1.5rem;
-                    color: var(--primarycolour);
+                    color: var(--primarycolor);
                     &:hover .icon{
-                        color: var(--Hovercolour);
+                        color: var(--Hovercolor);
                     }
                 }
             }
@@ -178,7 +178,7 @@
                         .navItems{
                             
                             .navLink{
-                                // color: var(--primarycolour);
+                                // color: var(--primarycolor);
                                 color: black;
                                 padding: 0 .45rem;
                                 font-size: 1rem;
@@ -189,17 +189,17 @@
                                 svg{
                                     font-size: 1.2rem;
                                     &:hover{
-                                        color:var(--Hovercolour)
+                                        color:var(--Hovercolor)
                                     }
                                 }
                                     &:hover{
-                                        color:var(--Hovercolour)
+                                        color:var(--Hovercolor)
                                     }
                                 
                             }
 
                             .avatar{
-                                background-color: var(--primarycolour);
+                                background-color: var(--primarycolor);
                                 cursor: pointer;
                                 &:hover{
                                     scale: 1.1;
@@ -209,17 +209,17 @@
                         .btn{
                             margin-left: 1rem;
                             a{
-                                color: var(--primarycolour);
+                                color: var(--primarycolor);
                                 font-weight: 500;
                             }
                         }
                         .loginBtn{
                             background: none;
-                            border: 1px solid var(--primarycolour);
+                            border: 1px solid var(--primarycolor);
                             &:hover{
-                                background: var(--primarycolour);
+                                background: var(--primarycolor);
                                 a{
-                                    color:var(--whitecolour)
+                                    color:var(--whitecolor)
                                 }
                             }
                         }

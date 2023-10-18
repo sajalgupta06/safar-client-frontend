@@ -116,17 +116,17 @@
             border-radius: 50%;
             font-size: 2.5rem;
             &:hover {
-              background: var(--blackcolour);
-              column-rule: var(--whitecolour);
+              background: var(--blackcolor);
+              column-rule: var(--whitecolor);
             }
           }
   
           .leftIcon {
-            background: var(--blackcolour);
-            color: var(--whitecolour);
+            background: var(--blackcolor);
+            color: var(--whitecolor);
             &:hover {
               background: var(--greyText);
-              color: var(--blackcolour);
+              color: var(--blackcolor);
             }
           }
         }
@@ -166,7 +166,7 @@
                   .selected{
                     
                     transition: all 0.1 ease-in-out;
-                    fill: var(--redcolour);
+                    fill: var(--redcolor);
                   
                   }
                 }
@@ -194,11 +194,11 @@
                 //   overflow: hidden;
       
                 //   h3 {
-                //     color: var(--whitecolour);
+                //     color: var(--whitecolor);
                 //     font-weight: 600;
                 //   }
                 //   p {
-                //     color: var(--whitecolour);
+                //     color: var(--whitecolor);
                 //     opacity: 0.7;
                 //     font-weight: 13px;
                 //   }
@@ -208,17 +208,17 @@
                 //     right: 10px;
                 //     bottom: 10px;
                 //     padding: 0.5rem;
-                //     background: var(--primarycolour);
+                //     background: var(--primarycolor);
                 //     font-size: 2.5rem;
                 //     border-radius: 50%;
-                //     color: var(--whitecolour);
+                //     color: var(--whitecolor);
                 //     border: 1px solid transparent;
                 //     transition: 0.3s ease;
       
                 //     &:hover {
-                //       background: var(--blackcolour);
-                //       border: 1px solid var(--primarycolour);
-                //       color: var(--primarycolour);
+                //       background: var(--blackcolor);
+                //       border: 1px solid var(--primarycolor);
+                //       color: var(--primarycolor);
                 //     }
                 //   }
                 // }
@@ -230,7 +230,7 @@
                 .name {
                   font-size: 1rem;
                   font-weight: 600;
-                  color: var(--blackcolour);
+                  color: var(--blackcolor);
                   position: relative;
                   width: max-content;
                   margin-bottom: 0.7rem;
@@ -245,7 +245,7 @@
                   // &::after {
                   //   content: "";
                   //   position: absolute;
-                  //   background: var(--primarycolour);
+                  //   background: var(--primarycolor);
                   //   top: 45%;
                   //   right: -150%;
                   //   height: 5px;
@@ -261,21 +261,21 @@
                     // right: 10px;
                     // bottom: 10px;
                     padding: 0.5rem;
-                    background: var(--primarycolour);
+                    background: var(--primarycolor);
                     font-size: 2.3rem;
                     border-radius: 50%;
-                    color: var(--whitecolour);
+                    color: var(--whitecolor);
                     border: 1px solid transparent;
                     transition: 0.3s ease;
       
                     &:hover {
-                      background: var(--blackcolour);
-                      border: 1px solid var(--primarycolour);
-                      color: var(--primarycolour);
+                      background: var(--blackcolor);
+                      border: 1px solid var(--primarycolor);
+                      color: var(--primarycolor);
                     }
                   }
                   h6 {
-                    color: var(--blackcolour);
+                    color: var(--blackcolor);
                     font-weight: 500;
                     font-size: 15px;
                   }
@@ -286,7 +286,7 @@
                     transform: translateY(5px);
       
                     .icon {
-                      color: var(--primarycolour);
+                      color: var(--primarycolor);
                     }
                   }
                 }

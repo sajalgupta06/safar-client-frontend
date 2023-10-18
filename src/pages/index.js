@@ -23,7 +23,6 @@ export default function Index({ popularData,collections }) {
   const context = useContext(MyContext);
 
 
-
   return (
     <>
       <Search />

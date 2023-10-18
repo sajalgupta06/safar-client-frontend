@@ -30,13 +30,22 @@ const Popular = (props) => {
     initialSlide: 0,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
         
         },
       },
+      {
+        breakpoint: 750,
+        settings: {
+          slidesToShow: 2.5,
+          slidesToScroll: 3,
+        
+        },
+      },
+
       {
         breakpoint: 600,
         settings: {
@@ -46,7 +55,7 @@ const Popular = (props) => {
         },
       },
       {
-        breakpoint: 530,
+        breakpoint: 545,
         settings: {
           slidesToShow: 2 ,
           slidesToScroll: 2,
@@ -56,8 +65,8 @@ const Popular = (props) => {
       {
         breakpoint: 400,
         settings: {
-          slidesToShow: 2.5,
-          slidesToScroll: 2.5,
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
@@ -134,7 +143,7 @@ const Popular = (props) => {
 
 
               <Link href={`/trip/${trip.slug}`} key={key}>
-              <div className="cards">
+              <div className="card">
                 <div className="card-item">
                   <div className="card-image">
                     <Image src={homeBgImage} 
@@ -143,8 +152,15 @@ const Popular = (props) => {
                     ></Image>
                   </div>
                   <div className="card-info">
+                    <div className="card-info-collections">
+                      {trip?.collections.map((coll,i)=>{
+                        return (
+                          <p  key={i}>{coll.name}</p>
+                        )
+                      })}
+                    </div>
                     <h2 className="card-title">{trip.name}</h2>
-                    <p className="card-intro">starting at <span>
+                    <p className="card-intro"><p>starting at</p> <span>
                     <BiRupee className="icon"/> {trip.finalPrice}
                       </span> </p>
                   </div>
