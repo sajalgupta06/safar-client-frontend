@@ -7,11 +7,10 @@ import { APP_NAME } from "../../../config";
 import placeHolderImage from '../../static/images/placeholder-image.png'
 import homeBgImage from "../../static/images/homeBgImage.jpg";
 import { BiRupee } from "react-icons/bi";
+import TripCard from "@/components/Card/TripCard";
 
 export default function index({ data ,collection}) {
 
-  console.log("trips",data)
-  console.log("Collection",collection)
 
   return (
     <section className=" collection section">
@@ -32,29 +31,7 @@ export default function index({ data ,collection}) {
           <div className="mainContent grid">
             {data?.map((trip, key) => {
               return (
-                <Link href={`/trip/${trip.slug}`} key={key}>
-                  <div className="cards">
-                    <div className="card-item">
-                      <div className="card-image">
-                        <Image
-                          // src={trip?.photos.length>0 && trip.photos[0].src}
-                          src={homeBgImage}
-                          alt={placeHolderImage}
-                          blurDataURL={placeHolderImage.src}
-                        ></Image>
-                      </div>
-                      <div className="card-info">
-                        <h2 className="card-title">{trip.name}</h2>
-                        <p className="card-intro">
-                          starting at{" "}
-                          <span>
-                            <BiRupee className="icon" /> {trip.finalPrice}
-                          </span>{" "}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
+                <TripCard key= {key} trip = {trip}/>
               );
             })}
           </div>

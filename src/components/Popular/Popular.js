@@ -1,23 +1,18 @@
 import React, { useContext, useRef } from "react";
 import { BsArrowLeftShort, BsArrowRightShort, BsDot } from "react-icons/bs";
-import homeBgImage from "../../static/images/homeBgImage.jpg";
 import "aos/dist/aos.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { MyContext } from "@/pages/_app"; 
-import Link from "next/link";
-import Image from "next/image";
-import { BiRupee } from "react-icons/bi";
-import placeHolderImage from '../../static/images/placeholder-image.png'
+import TripCard from "../Card/TripCard";
 
 const Popular = (props) => {
   const { data } = props;
 
   const context = useContext(MyContext);
 
- 
-
+  console.log(data)
 
   const sliderRef = useRef();
 
@@ -109,64 +104,7 @@ const Popular = (props) => {
             <Slider {...settings} ref={sliderRef}>
               { data && data?.map((trip, key) => {
                 return (
-                  // <div className="singleDestination" key={key}>
-                  //   <div className="destImage">
-                  
-
-                  //     <Image src={homeBgImage} alt="Image Title" className="" />
-
-                  //     {/* <div className="overlayInfo">
-                  //       <h3>Some Text </h3>
-                  //       <p>Lorem, ipsum dolor sit amet consectetur </p>
-                  //       <BsArrowRightShort className='icon'/>
-
-                  //   </div> */}
-                  //   </div>
-
-                  //   <div className="destFooter">
-                  //     <div className="name">{trip.name}</div>
-                  //     <div className="destText flex">
-                  //       <h6><BiRupee/> {`${trip.priceSlots[0].basePrice}`}</h6>
-
-                  //       <Link href={`/trip/${trip._id}`}>
-                  //         <BsArrowRightShort className="icon" />
-                  //       </Link>
-                  //       {/* <span className="flex">
-                  //       <span className="dot">
-                  //           <BsDot className = "icon"></BsDot>
-                  //       </span>
-                  //       Dot
-                  //   </span> */}
-                  //     </div>
-                  //   </div>
-                  // </div>
-
-
-              <Link href={`/trip/${trip.slug}`} key={key}>
-              <div className="card">
-                <div className="card-item">
-                  <div className="card-image">
-                    <Image src={homeBgImage} 
-                          alt={trip.name}
-                          blurDataURL={placeHolderImage}
-                    ></Image>
-                  </div>
-                  <div className="card-info">
-                    <div className="card-info-collections">
-                      {trip?.collections.map((coll,i)=>{
-                        return (
-                          <p  key={i}>{coll.name}</p>
-                        )
-                      })}
-                    </div>
-                    <h2 className="card-title">{trip.name}</h2>
-                    <p className="card-intro"><p>starting at</p> <span>
-                    <BiRupee className="icon"/> {trip.finalPrice}
-                      </span> </p>
-                  </div>
-                </div>
-              </div>
-              </Link>
+                    <TripCard key= {key} trip = {trip}/>
 
                 );
               })}

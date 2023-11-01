@@ -38,16 +38,25 @@
       &-gallery {
 
 
-
-        .sliderStyle {
-          height: 75vh;
+        .ant-image{
           width: 100%;
-          color: #fff;
-          line-height: 160px;
-          text-align: center;
-          background: #364d79;
-          opacity: 0.8;
+          height: 70vh;
+          .img{
+              object-fit: cover;
+              width: 100% !important;
+              position: relative !important;
+              height: 100% !important;
+            }
         }
+        // .sliderStyle {
+        //   height: 75vh;
+        //   width: 100%;
+        //   color: #fff;
+        //   line-height: 160px;
+        //   text-align: center;
+        //   background: #364d79;
+        //   opacity: 0.8;
+        // }
         .ant-image {
           width: 100%;
         }
@@ -487,6 +496,8 @@
               height: auto;
               border-radius: 1rem;
               padding: 1rem;
+              min-height: 0;
+              flex-direction: column;
               &-heading {
                 display: inline;
                 text-transform: capitalize;

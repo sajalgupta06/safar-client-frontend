@@ -13,12 +13,12 @@ import placeHolderImage from '../../static/images/placeholder-image.png'
 import homeBgImage from "../../static/images/homeBgImage.jpg";
 
 import dynamic from "next/dynamic";
+import TripCard from "@/components/Card/TripCard";
 
 const DataNotFound = dynamic(() => import('../../components/DataNotFound'))
 
 export default function index({
   tripData,
-  collectionNames,
   search,
   filterValues,
 }) {
@@ -197,17 +197,17 @@ console.log(sort)},
 
   }
 
-  const items = [
-    ...collectionNames?.map((ele, i) => {
-      return {
-        key: i,
-        label: ele.name,
-        onClick: () => {
-          setCollectionState(ele);
-        },
-      };
-    }),
-  ];
+  // const items = [
+  //   ...collectionNames?.map((ele, i) => {
+  //     return {
+  //       key: i,
+  //       label: ele.name,
+  //       onClick: () => {
+  //         setCollectionState(ele);
+  //       },
+  //     };
+  //   }),
+  // ];
 
   const filterContent = (
     <div className="iconfiltersDiv">
@@ -465,26 +465,7 @@ console.log(sort)},
                     <div className="mainContent grid">
                       {data?.map((trip, key) => {
                         return (
-                              <Link href={`/trip/${trip.slug}`} key={key}>
-                              <div className="cards">
-                                <div className="card-item">
-                                  <div className="card-image">
-                                    <Image 
-                                    // src={trip?.photos.length>0 && trip.photos[0].src} 
-                                    src={homeBgImage} 
-                                          alt={placeHolderImage}
-                                          blurDataURL={placeHolderImage.src}
-                                    ></Image>
-                                  </div>
-                                  <div className="card-info">
-                                    <h2 className="card-title">{trip.name}</h2>
-                                    <p className="card-intro">starting at <span>
-                                    <BiRupee className="icon"/> {trip.finalPrice}
-                                      </span> </p>
-                                  </div>
-                                </div>
-                              </div>
-                </Link>
+                          <TripCard key= {key} trip = {trip}/>
                         );
                       })}
                     </div>
@@ -511,13 +492,12 @@ const queryString =  "?"+new URLSearchParams(obj).toString()
   try {
     const res = await fetchSeachTrips(queryString);
     if (res.statusCode == "10000" && res.data.trips.length > 0) {
-      const coll = await fetchCollectionNames();
+      // const coll = await fetchCollectionNames();
 
       return {
         props: {
           tripData: res.data.trips,
           search: context.query.search,
-          collectionNames: coll.data,
           filterValues: context.query,
         },
       };

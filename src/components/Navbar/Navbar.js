@@ -131,7 +131,6 @@ export default Navbar;
 export const getServerSideProps = async (context) => {
   // const res = await fetchUser(context.req.headers);
 
-  console.log("asd");
   return;
   // if (res.statusCode == "10000") {
   //   return {

@@ -231,3 +231,10 @@ export const getPaymentOrderId = async (amount) => {
 export const verifyPayment = async (data) => {
   return await postApi("/verifypayment", data, true);
 };
+
+
+// Trending Locations
+
+export const fetchTrendingLocations = async () => {
+  return await getApi("/topTrendingLocations", false);
+};

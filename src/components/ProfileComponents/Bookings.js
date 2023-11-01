@@ -13,7 +13,6 @@ export default function Bookings() {
   useEffect(() => {
     handleFetchTickets();
   }, []);
-  console.log(ticketData)
 
   const columns = [
     {

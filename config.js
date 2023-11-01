@@ -1,4 +1,5 @@
 let APP_ENV = "dev"
+let S3URL = "https://safar-image-db.s3.ap-south-1.amazonaws.com"
 let URL;
 
 if(APP_ENV=="production"){
@@ -19,7 +20,8 @@ const firebaseConfig = {
 module.exports={
     APP_NAME:"Safar",
     URL,
-    firebaseConfig
+    firebaseConfig,
+    S3URL
 }
 
 // export NODE_OPTIONS=--openssl-legacy-provider

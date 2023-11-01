@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import dynamic from 'next/dynamic'
 import { FloatButton } from "antd";
-import { fetchAllCollections, fetchPopularTrips } from "@/actions/req";
+import { fetchAllCollections, fetchPopularTrips, fetchTrendingLocations } from "@/actions/req";
 import { MyContext } from "./_app";
 import Banner from "@/components/Banner/Banner";
 import banner1 from '../static/images/banner1.jpg'
@@ -19,7 +19,7 @@ const PhotoGallery = dynamic(() => import('@/components/PhotoGallery/PhotoGaller
 
 
 
-export default function Index({ popularData,collections }) {
+export default function Index({ popularData,collections,locations }) {
   const context = useContext(MyContext);
 
 
@@ -28,9 +28,9 @@ export default function Index({ popularData,collections }) {
       <Search />
       <Popular data={popularData} />
       <Collections data = {collections}/>
-      <Banner image = {banner1}/>
+      {/* <Banner image = {banner1}/> */}
       {/* <Offer data={popularData} /> */}
-      <Locations/>
+      <Locations data= {locations}/>
       <Banner image = {banner2}/>
       <About />
       {/* <PhotoGallery/> */}
@@ -44,22 +44,38 @@ export default function Index({ popularData,collections }) {
 }
 
 export const getServerSideProps = async (context) => {
-  const res = await fetchPopularTrips();
-  const collections = await fetchAllCollections();
+  const popularDataRes = await fetchPopularTrips();
+  const collectionsRes = await fetchAllCollections();
+  const locationsRes = await fetchTrendingLocations();
 
-  if (res.statusCode == "10000" || collections.statusCode == "10000") {
-    return {
-      props: {
-        popularData: res.data.trips,
-        collections: collections.data
-      },
-    };
-  } else {
-    return {
-      props: {
-        popularData: [],
-        collections:[]
-      },
-    };
+  let popularData = []
+  let collections = []
+  let locations = []
+
+  if(popularDataRes.statusCode == "10000")
+  {
+    popularData= popularDataRes.data.trips
+
   }
+
+  if(collectionsRes.statusCode == "10000")
+  {
+    collections= collectionsRes.data
+  }
+
+  if(locationsRes.statusCode == "10000")
+  {
+    locations= locationsRes.data
+
+  }
+
+  return {
+    props: {
+      popularData,
+      collections,
+      locations
+    },
+  };
+  
+
 };

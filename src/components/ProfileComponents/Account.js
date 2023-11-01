@@ -95,7 +95,7 @@ useEffect(() => {
     {
       obj.phone = "Please Enter Valid Phone Number"
     }
-    console.log(values)
+   
       
     setErrors(obj)
   

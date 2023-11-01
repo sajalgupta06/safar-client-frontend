@@ -14,22 +14,43 @@
 
   .search{
     height: 70vh;
-    // background: linear-gradient(rgba(33,33,33,0.522),rgba(33,33,33,0.522),url("https://images.pexels.com/photos/11150616/pexels-photo-11150616.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"));
-    background-position: center;
-    // background-position: 20% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
+    // background-position: center;
+    // // background-position: 20% 50%;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // margin: auto;
     position: relative;
-    top:5rem;
-
+    // top:5rem;
+    
+      .ant-carousel{
+        position: relative;
+        top: 4rem;
+        height: 100%;
+        // .slick-slider, .slick-list, .slick-track{
+        //     height: 100%;
+        // }
+        .image-container{
+            width: 100%;
+            height: 70vh;
+            img {
+                object-fit: cover;
+                width: 100% !important;
+                position: relative !important;
+                height: 100% !important;
+              }
+          }
+        }
+       
 .secContainer{
     background: transparent;
     .searchText{
         text-align: center;
+        position: relative;
+        top: -16rem;
+    
         .title{
             color: var(--whitecolor);
             text-transform: capitalize;
@@ -136,7 +157,7 @@
   .search{
     .secContainer{
         .searchCard{
-            bottom: -42px;
+            bottom: -7rem;
             width: 90%;
             grid-template-columns: repeat(2,1fr);
             .btn{
@@ -168,8 +189,25 @@
   }
 }
 
+@media screen and (max-width:720px)
+{
+  .search{
+    .secContainer{
+       .searchText{
+        .title{
+            font-size: 2.5rem;
+        }
+        .subTitle{
+            font-size: 1.5rem;
+        }
+       }
+    }
+  }
+}
 
-@media screen and (min-width:556px)
+
+
+@media screen and (max-width:556px)
 {
   .search{
     .secContainer{
@@ -185,6 +223,22 @@
   }
 }
 
+@media screen and (max-width:330px)
+{
+  .search{
+    .secContainer{
+       .searchText{
+        .title{
+            font-size: 1.8rem;
+        }
+        .subTitle{
+            font-size: 1rem;
+        }
+       }
+    }
+  }
+}
+
 
 
 @media screen and (min-width:720px)
@@ -192,7 +246,7 @@
   .search{
     .secContainer{
         .searchCard{
-            bottom:-10%;
+            bottom:-27%;
             grid-template-columns: repeat(4,1fr);
             .btn{
               

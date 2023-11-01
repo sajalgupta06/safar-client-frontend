@@ -64,7 +64,10 @@
       
       .slick-slide{
         // padding: 1rem;
+        border-radius: 1rem;
       }
+
+      
 
       .cards {
         display: flex;
@@ -92,7 +95,7 @@
         //   zoom: 0.5;
         // }
 
-      
+   
         .card-item {
           height: 100%;
 
@@ -100,18 +103,30 @@
           flex-direction: column;
           background-color: #fff;
           width: 100%;
-          border-radius: 6px;
+          border-radius: 1rem;
           box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
           // overflow: hidden;
           transition: transform 0.5s;
           -webkit-transition: transform 0.5s;
+        
+          z-index: 100;
+          border-radius: 1rem;
+          background: rgba(0, 0, 0, 0.9);
 
+          .card-image{
+            opacity: 0.8;
+        
+            img{
+              border-radius: 1rem;
+            }
+             
+          }
           &:hover {
             cursor: pointer;
             transform: scale(1.1);
             -webkit-transform: scale(1.1);
             .card-image {
-              opacity: 1;
+              opacity: 0.5;
             }
           }
         }
@@ -123,11 +138,18 @@
           flex-direction: column;
           // padding: 1rem;
           line-height: 1.5em;
-
+          position: relative;
           text-decoration: none;
           margin-top: 1rem;
+          top:-5rem;
+          
+          border-radius: 1rem;
+
           .card-title{
-            font-size: 1.3rem;
+            font-size: 2.3rem;
+            letter-spacing: 2px;
+            font-weight: 400;
+            color: #fff;
           }
 
           .card-intro{
@@ -195,12 +217,9 @@
         .card-image {
           // height: 80%!important;
           // height: 12rem;
-          height: 70%;
-          // overflow: hidden;
-          // background-size: cover;
-          // background-position: center;
-          // background-repeat: no-repeat;
-          border-radius: 6px 6px 0px 0px;
+          height: 100%;
+   
+          border-radius: 1rem;
           opacity: 0.91;
           width: 100%;
           img {

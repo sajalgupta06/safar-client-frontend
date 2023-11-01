@@ -19,6 +19,7 @@ import '@/styles/Company.scss'
 import '@/styles/Locations.scss'
 import '@/styles/Collections.scss'
 import '@/styles/Collection.scss'
+import '@/styles/Card.scss'
 import { createContext, useEffect, useReducer, useState } from "react";
 import reducer from "@/components/reducer";
 import { checkAuthentication, fetchUser } from "@/actions/req";

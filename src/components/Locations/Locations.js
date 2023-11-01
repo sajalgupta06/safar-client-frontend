@@ -18,11 +18,13 @@ import { Button, Modal } from "antd";
 import Link from "next/link";
 import Image from "next/image";
 import { BiRupee } from "react-icons/bi";
+import { S3URL } from "../../../config";
 
 const Locations = (props) => {
   const { data } = props;
 
   const sliderRef = useRef();
+
 
   var settings = {
 
@@ -78,10 +80,7 @@ const Locations = (props) => {
             <div className="textDiv">
               <h2 className="secTitle">Top Locations</h2>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-                animi consequuntur cum aperiam autem. At beatae quas deserunt
-                perferendis id vitae, cum et vero aperiam, iusto, dolorum sed
-                omnis repellendus?
+              A Curated List of the Indai's Most Captivating Destinations
               </p>
             </div>
             <div className="iconDiv flex">
@@ -99,99 +98,29 @@ const Locations = (props) => {
           <div className="mainContent ">
             {/* <div className=""> */}
             <Slider {...settings} ref={sliderRef}>
-              <div className="cards">
-                <div className="card-item">
-                  <div className="card-image">
-                    <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGltYWNoYWx8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"></img>
-                  </div>
-                  <div className="card-info">
-                    <h2 className="card-title">Himachal</h2>
-                    <p className="card-intro"></p>
-                  </div>
-                </div>
-              </div>
 
-              <div className="cards">
-                <div className="card-item">
-                  <div className="card-image">
-                    <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z29hfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"></img>
-                  </div>
-                  <div className="card-info">
-                    <h2 className="card-title">Goa</h2>
-                    <p className="card-intro"></p>
-                  </div>
+          {data?.map((location,i)=>{
+            return (
+             
+
+              <Link href={`/trips?search=${location.slug}`} className="cards" key={i}>
+              <div className="card-item">
+                <div className="card-image">
+                  <img src={`${S3URL}/${location.photo}`}></img>
+                </div>
+                <div className="card-info">
+                  <h2 className="card-title">{location.name}</h2>
+                  <p className="card-intro"></p>
                 </div>
               </div>
-              <div className="cards">
-                <div className="card-item">
-                  <div className="card-image">
-                    <img src="https://images.unsplash.com/photo-1573398643956-2b9e6ade3456?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2lra2ltfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"></img>
-                  </div>
-                  <div className="card-info">
-                    <h2 className="card-title">Sikkim</h2>
-                    <p className="card-intro"></p>
-                  </div>
-                </div>
-              </div>
-              <div className="cards">
-                <div className="card-item">
-                  <div className="card-image">
-                    <img src="https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFqYXN0aGFufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"></img>
-                  </div>
-                  <div className="card-info">
-                    <h2 className="card-title">Rajasthan</h2>
-                    <p className="card-intro"></p>
-                  </div>
-                </div>
-              </div>
+            </Link>
 
 
-              <div className="cards">
-                <div className="card-item">
-                  <div className="card-image">
-                    <img src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGltYWNoYWx8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"></img>
-                  </div>
-                  <div className="card-info">
-                    <h2 className="card-title">Himachal</h2>
-                    <p className="card-intro"></p>
-                  </div>
-                </div>
-              </div>
+            )
+          })}
 
-              <div className="cards">
-                <div className="card-item">
-                  <div className="card-image">
-                    <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z29hfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"></img>
-                  </div>
-                  <div className="card-info">
-                    <h2 className="card-title">Goa</h2>
-                    <p className="card-intro"></p>
-                  </div>
-                </div>
-              </div>
-              <div className="cards">
-                <div className="card-item">
-                  <div className="card-image">
-                    <img src="https://images.unsplash.com/photo-1573398643956-2b9e6ade3456?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2lra2ltfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"></img>
-                  </div>
-                  <div className="card-info">
-                    <h2 className="card-title">Sikkim</h2>
-                    <p className="card-intro"></p>
-                  </div>
-                </div>
-              </div>
-              <div className="cards">
-                <div className="card-item">
-                  <div className="card-image">
-                    <img src="https://images.unsplash.com/photo-1603262110263-fb0112e7cc33?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cmFqYXN0aGFufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"></img>
-                  </div>
-                  <div className="card-info">
-                    <h2 className="card-title">Rajasthan</h2>
-                    <p className="card-intro"></p>
-                  </div>
-                </div>
-              </div>
-
+             
+           
            
             </Slider>
           </div>
